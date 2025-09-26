@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bali Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fbfdfc;
+      color: #163a3a;
+    }
+    header {
+      background: url('./photos/bali-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #0a6b5c;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffd166; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #0a6b5c;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #0a6b5c;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #0a6b5c;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #e9fff7;
+      color: #0a6b5c;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+
+    /* small tweaks for mobile */
+    @media (max-width:700px){
+      .sidebar{ display:none; }
+      header{ min-height:45vh }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Discover Bali</h1></header>
+  <nav>
+    <a href="index.html">🏝️ Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About Bali</h2>
+    <p>An island of rice terraces, volcanic peaks, coral reefs and warm-hearted culture — <strong>Bali</strong> blends tropical scenery with temples, wellness retreats, surf beaches and vibrant arts.</p>
+    <p>From the cultural town of <strong>Ubud</strong> to the dramatic clifftop temples of <strong>Uluwatu</strong>, Bali is endlessly photogenic and easy to fall in love with.</p>
+	<p>Bali is a province of Indonesia and the westernmost of the Lesser Sunda Islands.
+	East of Java and west of Lombok, the province includes the island of Bali 
+	and a few smaller offshore islands, notably Nusa Penida, Nusa Lembongan, and Nusa Ceningan to the southeast. 
+	The provincial capital, Denpasar,is the most populous city in the Lesser Sunda Islands 
+	and the second-largest, after Makassar, in Eastern Indonesia. Denpasar metropolitan area is the extended metropolitan area around Denpasar. 
+	The upland town of Ubud in Greater Denpasar is considered Bali's cultural centre. 
+	The province is Indonesia's main tourist destination, with a significan rise in tourism since the 1980s, 
+	and becoming an Indonesian area of overtourism.[12] Tourism-related business makes up 80% of the Bali economy.</p>
+	
+	<p>Bali is the only Hindu-majority province in Indonesia, with 86.40% of the population adhering to Balinese Hinduism.
+	It is renowned for its highly developed arts, including traditional and modern dance, sculpture, painting, leather, metalworking, and music. 
+	The Indonesian International Film Festival is held every year in Bali. 
+	Other international events that have been held in Bali include Miss World 2013, 
+	the 2018 Annual Meetings of the International Monetary Fund and the World Bank Group and the 2022 G20 summit. 
+	In March 2017, TripAdvisor named Bali as the world's top destination in its Traveller's Choice award, which it also earned in January 2021.</p>
+	
+	<p>Bali is part of the Coral Triangle, an area with high diversity of marine species, especially fish and turtles.
+	In this area alone, over 500 reef-building coral species can be found. 
+	For comparison, this is about seven times as many as in the entire Caribbean.
+	Bali is the home of the Subak irrigation system, a UNESCO World Heritage Site.
+	It is also home to a unified confederation of kingdoms composed of 10 traditional royal Balinese houses, 
+	each house ruling a specific geographic area. The confederation is the successor of the Bali Kingdom. 
+	The royal houses, which originated before Dutch colonisation, are not recognised by the government of Indonesia.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Best time: Apr–Oct (dry season)</span>
+        <span class="pill">Languages: Bahasa Indonesia & Balinese</span>
+        <span class="pill">Famous for: Temples, rice terraces & beaches</span>
+      </div>
+    </div>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit Places</h2>
+    <ul>
+      <li>🕌 Tanah Lot – Iconic sea temple at sunset.</li>
+      <li>🪨 Uluwatu Temple – Dramatic cliff-top temple and Kecak nights.</li>
+      <li>🌾 Tegallalang Rice Terraces (Ubud) – Photogenic layered rice fields.</li>
+      <li>🐒 Ubud Monkey Forest – Sacred forest sanctuary with playful macaques.</li>
+      <li>🏄‍♂️ Kuta & Seminyak – Beaches, surfing and lively nightlife.</li>
+      <li>🏝️ Nusa Penida – Turquoise bays, dramatic cliffs and snorkeling.</li>
+      <li>🌋 Mount Batur – Sunrise treks to an active volcano.</li>
+      <li>🌊 Gitgit & Tegenungan Falls – Refreshing waterfalls in lush surroundings.</li>
+      <li>🧘‍♀️ Canggu – Cafés, rice-field views and wellness scene.</li>
+      <li>🏖️ Sanur – Quiet beaches and sunrise promenades.</li>
+      <li>🛕 Besakih Temple – Bali’s largest and holiest temple complex.</li>
+      <li>🍶 Sidemen & Jatiluwih – Off-the-beaten-path rice landscapes and local life.</li>
+      <li>🌅 Jimbaran – Seafood dinners on the beach at sunset.</li>
+      <li>🚤 Gili Islands (nearby) – White-sand islands and diving.</li>
+      <li>🎨 Ubud Market – Handicrafts, batik and local art shops.</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 Bali Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/tanah-lot.jpg" alt="Tanah Lot" /><div class="card-content"><h3>Tanah Lot Temple</h3></div></div>
+      <div class="card"><img src="./photos/uluwatu.jpg" alt="Uluwatu Temple" /><div class="card-content"><h3>Uluwatu Cliff</h3></div></div>
+      <div class="card"><img src="./photos/tegallalang.jpg" alt="Tegallalang Rice Terraces" /><div class="card-content"><h3>Tegallalang Rice Terraces</h3></div></div>
+      <div class="card"><img src="./photos/ubud-monkey-forest.jpg" alt="Ubud Monkey Forest" /><div class="card-content"><h3>Ubud Monkey Forest</h3></div></div>
+      <div class="card"><img src="./photos/kuta-beach.jpg" alt="Kuta Beach" /><div class="card-content"><h3>Kuta Beach</h3></div></div>
+      <div class="card"><img src="./photos/nusa-penida.jpg" alt="Nusa Penida" /><div class="card-content"><h3>Nusa Penida</h3></div></div>
+      <div class="card"><img src="./photos/mount-batur.jpg" alt="Mount Batur" /><div class="card-content"><h3>Mount Batur Sunrise</h3></div></div>
+      <div class="card"><img src="./photos/gitgit-falls.jpg" alt="Gitgit Falls" /><div class="card-content"><h3>Gitgit Waterfall</h3></div></div>
+      <div class="card"><img src="./photos/seminyak.jpg" alt="Seminyak" /><div class="card-content"><h3>Seminyak Streets</h3></div></div>
+      <div class="card"><img src="./photos/sanur.jpg" alt="Sanur" /><div class="card-content"><h3>Sanur Sunrise</h3></div></div>
+      <div class="card"><img src="./photos/besakih.jpg" alt="Besakih Temple" /><div class="card-content"><h3>Besakih Temple</h3></div></div>
+      <div class="card"><img src="./photos/jatiluwih.jpg" alt="Jatiluwih Rice Terraces" /><div class="card-content"><h3>Jatiluwih Rice Fields</h3></div></div>
+      <div class="card"><img src="./photos/jimbaran.jpg" alt="Jimbaran" /><div class="card-content"><h3>Jimbaran Bay</h3></div></div>
+      <div class="card"><img src="./photos/canggu.jpg" alt="Canggu" /><div class="card-content"><h3>Canggu Vibes</h3></div></div>
+      <div class="card"><img src="./photos/gili.jpg" alt="Gili Islands" /><div class="card-content"><h3>Gili Islands</h3></div></div>
+      <div class="card"><img src="./photos/ubud-market.jpg" alt="Ubud Market" /><div class="card-content"><h3>Ubud Market</h3></div></div>
+    </div>
+  </section>
+  <footer>
+  <p>&copy; 2025 My Travel Diary | Bali Page <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

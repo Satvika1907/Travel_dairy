@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Australia Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fbfdfc;
+      color: #163a3a;
+    }
+    header {
+      background: url('./photos/australia-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #274155;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffd166; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #274155;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #274155;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #274155;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #f1fbff;
+      color: #274155;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+
+    /* small tweaks for mobile */
+    @media (max-width:700px){
+      .sidebar{ display:none; }
+      header{ min-height:45vh }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Australia — Land of Sun, Sea & Red Earth</h1></header>
+  <nav>
+    <a href="index.html">🌏 Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About Australia</h2>
+    <p>Australia is a vast island continent known for its diverse landscapes — 
+	from sun-kissed beaches and vibrant coral reefs to red desert plains and lush rainforests. 
+	It's a melting pot of cultures with iconic wildlife and world-famous landmarks.</p>
+    <p>From the bustling harbours of Sydney to the ancient sandstone monolith of Uluru, 
+	Australia offers a unique mix of natural wonders, Indigenous heritage, and modern city life.</p>
+    <p>Key highlights include the Great Barrier Reef, the Great Ocean Road, 
+	the tropical Daintree Rainforest, and the cosmopolitan cities of Sydney, Melbourne and Brisbane. 
+	Outdoor adventures, wildlife encounters, and indigenous cultural experiences make Australia a bucket-list destination.</p>
+	<p>Australia, officially the Commonwealth of Australia, 
+	is a country comprising the mainland of the Australian continent, the island of Tasmania and numerous smaller islands.
+	It has a total area of 7,688,287 km2 (2,968,464 sq mi), making it the sixth-largest country in the world and the largest in Oceania.
+	Australia is the world's flattest and driest inhabited continent.
+	It is a megadiverse country, and its size gives it a wide variety of landscapes and climates including deserts
+	in the interior and tropical rainforests along the coast.</p>
+	<p>The ancestors of Aboriginal Australians began arriving from Southeast Asia 50,000 to 65,000 years ago, 
+	during the last glacial period.By the time of British settlement, Aboriginal Australians spoke 250 distinct languages 
+	and had one of the oldest living cultures in the world.Australia's written history commenced with Dutch exploration 
+	of most of the coastline in the 17th century. British colonisation began in 1788 with the establishment of the penal colony
+	of New South Wales. By the mid-19th century, most of the continent had been explored by European settlers and five additional 
+	self-governing British colonies were established, each gaining responsible government by 1890. 
+	The colonies federated in 1901, forming the Commonwealth of Australia. 
+	This continued a process of increasing autonomy from the United Kingdom, 
+	highlighted by the Statute of Westminster Adoption Act 1942, and culminating in the Australia Acts of 1986.</p>
+	<p>Australia is a federal parliamentary democracy and constitutional monarchy comprising six states and ten territories.
+	Its population of almost 28 million is highly urbanised and heavily concentrated on the eastern seaboard.
+	Canberra is the nation's capital, while its most populous cities are Sydney and Melbourne, 
+	both with a population of more than five million.Australia's culture is diverse, and the country has one of the highest foreign-born
+	populations in the world. It has a highly developed economy and one of the highest per capita incomes globally. 
+	Its abundant natural resources and well-developed international trade relations are crucial to the country's economy. 
+	It ranks highly for quality of life, health, education, economic freedom, civil liberties and political rights.</p>
+	<p>Australia is a middle power, and has the world's thirteenth-highest military expenditure. 
+	It is a member of international groups including the United Nations; the G20; the OECD; 
+	the World Trade Organization; Asia-Pacific Economic Cooperation; the Pacific Islands Forum; the Pacific Community; 
+	the Commonwealth of Nations; and the defence and security organisations ANZUS, AUKUS, and the Five Eyes. 
+	It is also a major non-NATO ally of the United States.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Area: ~7.7 million km²</span>
+        <span class="pill">Best time: Sep–Nov & Mar–May</span>
+        <span class="pill">Language: English (de facto)</span>
+      </div>
+    </div>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit & Nearby</h2>
+    <ul>
+      <li>🏛️ Sydney Opera House & Harbour Bridge — Iconic urban landmarks and lively harbourside.</li>
+      <li>🐠 Great Barrier Reef — The world’s largest coral reef system (snorkeling, diving).</li>
+      <li>🪨 Uluru (Ayers Rock) — Sacred monolith in the Red Centre with ancient Anangu culture.</li>
+      <li>🌿 Daintree Rainforest — Ancient tropical rainforest with unique flora & fauna.</li>
+      <li>🚗 Great Ocean Road — Scenic coastal drive with the Twelve Apostles rock stacks.</li>
+      <li>🐨 Kangaroo Island — Wildlife-rich island for close encounters.</li>
+      <li>✈️ Domestic flights & scenic heli tours — Useful for long-distance access.</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 Australia Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/sydney-opera.jpg" alt="Sydney Opera House" /><div class="card-content"><h3>Sydney Opera House</h3></div></div>
+      <div class="card"><img src="./photos/great-barrier-reef.jpg" alt="Great Barrier Reef" /><div class="card-content"><h3>Great Barrier Reef</h3></div></div>
+      <div class="card"><img src="./photos/uluru.jpg" alt="Uluru at sunset" /><div class="card-content"><h3>Uluru (Ayers Rock)</h3></div></div>
+      <div class="card"><img src="./photos/daintree-rainforest.jpeg" alt="Daintree Rainforest" /><div class="card-content"><h3>Daintree Rainforest</h3></div></div>
+      <div class="card"><img src="./photos/great-ocean-road.jpg" alt="Great Ocean Road" /><div class="card-content"><h3>Great Ocean Road</h3></div></div>
+      <div class="card"><img src="./photos/kangaroo-island.jpg" alt="Kangaroo Island wildlife" /><div class="card-content"><h3>Kangaroo Island</h3></div></div>
+      <div class="card"><img src="./photos/whitsundays.jpg" alt="White sandy Whitsundays" /><div class="card-content"><h3>Whitehaven Beach, Whitsundays</h3></div></div>
+      <div class="card"><img src="./photos/melbourne-lanes.jpg" alt="Melbourne laneways" /><div class="card-content"><h3>Melbourne Laneways</h3></div></div>
+    </div>
+  </section>
+  <footer>
+  <p>&copy; 2025 Australia Travel | Explore the Land Down Under <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

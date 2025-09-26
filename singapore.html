@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Singapore Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fbfdfc;
+      color: #163a3a;
+    }
+    header {
+      background: url('./photos/singapore-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #0a6b5c;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffd166; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #0a6b5c;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #0a6b5c;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #0a6b5c;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #e9fff7;
+      color: #0a6b5c;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+
+    /* small tweaks for mobile */
+    @media (max-width:700px){
+      .sidebar{ display:none; }
+      header{ min-height:45vh }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Discover Singapore</h1></header>
+  <nav>
+    <a href="index.html">🦁 Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+
+  <section id="about">
+    <h2>About Singapore</h2>
+    <p><strong>Singapore</strong> is a city-state where lush gardens meet futuristic skylines. Expect spotless streets, efficient transport, award‑winning airports, and a legendary foodie culture built around hawker centres.</p>
+    <p>From the supertrees of <strong>Gardens by the Bay</strong> to the heritage shophouses of <strong>Chinatown</strong> and <strong>Little India</strong>, Singapore blends innovation with tradition in a compact, walkable playground.</p>
+	<p><strong>Singapore</strong> officially the Republic of Singapore, is an island country and city-state in <strong>Southeast Asia</strong>. 
+	The country's territory comprises one main island, 63 satellite islands and islets, and one outlying islet. 
+	It is about one degree of latitude (137 kilometres or 85 miles) north of the equator, 
+	off the southern tip of the Malay Peninsula, bordering the Strait of Malacca to the west, 
+	the Singapore Strait to the south along with the Riau Islands in Indonesia, 
+	the South China Sea to the east, and the Straits of Johor along with the State of Johor in Malaysia to the north.</p>
+	<p>Singapore,officially the Republic of Singapore, is an island country and city-state in Southeast Asia. 
+	The country's territory comprises one main island, 63 satellite islands and islets, and one outlying islet. 
+	It is about one degree of latitude (137 kilometres or 85 miles) north of the equator, 
+	off the southern tip of the Malay Peninsula, bordering the Strait of Malacca to the west, 
+	the Singapore Strait to the south along with the Riau Islands in Indonesia, the South China Sea to the east, 
+	and the Straits of Johor along with the State of Johor in Malaysia to the north.</p>
+	<p>In its early history, Singapore was a maritime emporium known as Temasek; subsequently, 
+	it was part of a major constituent part of several successive thalassocratic empires. 
+	Its contemporary era began in 1819, when Stamford Raffles established Singapore as an entrepôt trading post of the British Empire. 
+	In 1867, Singapore came under the direct control of Britain as part of the Straits Settlements. 
+	During World War II, Singapore was occupied by Japan in 1942 and returned to British control as a Crown colony following Japan's surrender in 1945. 
+	Singapore gained self-governance in 1959 and, in 1963, became part of the new federation of Malaysia,
+	alongside Malaya, North Borneo, and Sarawak. Ideological differences led to Singapore's expulsion from the federation two years later;
+	Singapore became an independent sovereign country in 1965. 
+	After early years of turbulence and despite lacking natural resources and a hinterland, 
+	the nation rapidly developed to become one of the Four Asian Tigers.</p>
+	<p>Singapore is a parliamentary republic and its legal system is based on common law. 
+	While it is constitutionally a multi-party democracy where free elections are regularly held, 
+	it functions as a de facto one-party state, with the People's Action Party (PAP) maintaining continuous political dominance since 1959.
+	The PAP's longstanding control has resulted in limited political pluralism and a highly centralised governance 
+	structure over national institutions. One of the five founding members of ASEAN, 
+	Singapore is also the headquarters of the Asia-Pacific Economic Cooperation Secretariat, 
+	the Pacific Economic Cooperation Council Secretariat, and is the host city of many international conferences and events. 
+	Singapore is also a member of the United Nations, the World Trade Organization, the East Asia Summit, 
+	the Non-Aligned Movement, and the Commonwealth of Nations.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Best time: All year (drier: Feb–Apr)</span>
+        <span class="pill">Languages: English, Mandarin, Malay, Tamil</span>
+        <span class="pill">Famous for: Skyline, hawker food, green city</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="places">
+    <h2>📍 Must-Visit Places</h2>
+    <ul>
+      <li>🏙️ Marina Bay Sands – Iconic hotel, SkyPark views & Spectra show.</li>
+      <li>🌳 Gardens by the Bay – Supertree Grove & Cloud Forest.</li>
+      <li>🦁 Merlion Park – Waterfront symbol with skyline backdrops.</li>
+      <li>🎢 Sentosa Island – Universal Studios, beaches & adventure.</li>
+      <li>🛕 Chinatown – Temples, markets & classic shophouses.</li>
+      <li>🎨 Little India – Vibrant colors, Sri Veeramakaliamman Temple.</li>
+      <li>🌿 Singapore Botanic Gardens – UNESCO‑listed tropical oasis.</li>
+      <li>🛍️ Orchard Road – Flagship malls & fashion.</li>
+      <li>🕌 Kampong Glam – Sultan Mosque & Haji Lane murals.</li>
+      <li>🌉 Clarke Quay – Riverside dining & nightlife.</li>
+      <li>💎 Jewel Changi – Rain Vortex waterfall & canopy park.</li>
+      <li>🖼️ National Gallery Singapore – Southeast Asian art.</li>
+      <li>🚲 East Coast Park – Cycling paths & sea breeze.</li>
+      <li>🏞️ Southern Ridges – Henderson Waves & forest walks.</li>
+      <li>🛶 Pulau Ubin – Rustic kampong life & Chek Jawa wetlands.</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>📸 Singapore Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/marina-bay-sands.jpg" alt="Marina Bay Sands" /><div class="card-content"><h3>Marina Bay Sands</h3></div></div>
+      <div class="card"><img src="./photos/gardens-bay.jpg" alt="Gardens by the Bay" /><div class="card-content"><h3>Gardens by the Bay</h3></div></div>
+      <div class="card"><img src="./photos/merlion.jpg" alt="Merlion Park" /><div class="card-content"><h3>Merlion Park</h3></div></div>
+      <div class="card"><img src="./photos/sentosa.jpg" alt="Sentosa Island" /><div class="card-content"><h3>Sentosa Island</h3></div></div>
+      <div class="card"><img src="./photos/chinatown-sg.jpg" alt="Chinatown Singapore" /><div class="card-content"><h3>Chinatown</h3></div></div>
+      <div class="card"><img src="./photos/little-india.jpg" alt="Little India" /><div class="card-content"><h3>Little India</h3></div></div>
+      <div class="card"><img src="./photos/botanic-gardens.jpg" alt="Singapore Botanic Gardens" /><div class="card-content"><h3>Botanic Gardens</h3></div></div>
+      <div class="card"><img src="./photos/orchard-road.jpg" alt="Orchard Road" /><div class="card-content"><h3>Orchard Road</h3></div></div>
+      <div class="card"><img src="./photos/kampong-glam.jpg" alt="Kampong Glam" /><div class="card-content"><h3>Kampong Glam</h3></div></div>
+      <div class="card"><img src="./photos/clarke-quay.jpg" alt="Clarke Quay" /><div class="card-content"><h3>Clarke Quay</h3></div></div>
+      <div class="card"><img src="./photos/jewel-changi.jpg" alt="Jewel Changi" /><div class="card-content"><h3>Jewel Changi</h3></div></div>
+      <div class="card"><img src="./photos/national-gallery.jpg" alt="National Gallery Singapore" /><div class="card-content"><h3>National Gallery</h3></div></div>
+      <div class="card"><img src="./photos/east-coast-park.jpg" alt="East Coast Park" /><div class="card-content"><h3>East Coast Park</h3></div></div>
+      <div class="card"><img src="./photos/haji-lane.jpg" alt="Haji Lane" /><div class="card-content"><h3>Haji Lane</h3></div></div>
+      <div class="card"><img src="./photos/pulau-ubin.jpg" alt="Pulau Ubin" /><div class="card-content"><h3>Pulau Ubin</h3></div></div>
+      <div class="card"><img src="./photos/southern-ridges.jpg" alt="Southern Ridges" /><div class="card-content"><h3>Southern Ridges</h3></div></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Travel Diary | Singapore Page <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

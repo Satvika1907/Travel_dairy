@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>London Travel</title>
+  <style>
+  
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: url('./photos/london-banner.jpg') no-repeat center/cover;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px 25px;
+      border-radius: 12px;
+    }
+    nav {
+      background: #222;
+      padding: 15px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #f4d03f;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+	.card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+	
+	section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+	
+	.sidebar {
+      position: fixed;
+      top: 50%;
+      left: 30px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+   .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: black;
+      text-decoration: none;
+    }
+
+/* Hidden text label */
+   .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: black;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+/* Show text when hover */
+   .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(5px);
+    }
+	
+	
+	.sidebar a:hover {
+	   width:35px;
+	   height:8px;
+	}
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header>
+    <h1>Welcome to London</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  
+  <!-- Fixed Left Navigation -->
+  <div class="sidebar">
+  <a href="#home" data-label="Home"></a>
+  <a href="#about" data-label="About"></a>
+  <a href="#places" data-label="Places"></a>
+  <a href="#gallery" data-label="Gallery"></a>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About London</h2>
+    <p>
+      London, the capital of the United Kingdom, is a city steeped in history and culture. 
+      From the majestic Buckingham Palace and Tower of London to the modern skyline of The Shard, 
+      London is where the past meets the present. Known for its royal heritage, iconic red buses, 
+      and diverse neighborhoods, it’s a must-visit destination for every traveler.
+	</p>
+	<p>
+	  London, the capital of the United Kingdom, is a historic, diverse, and economically significant metropolis on the River Thames, 
+	  known for its iconic landmarks like the Tower of London, 
+	  world-class museums such as the British Museum and the National Gallery, 
+	  vibrant theatre scene, and global influence as a financial and cultural center. 
+	  As one of the world's most cosmopolitan cities, it blends its ancient Roman origins with modern architecture, 
+	  offering a vast array of attractions for visitors and residents alike.
+    </p>
+	<p>
+	  <h4>Buckingham Palace : </h4>
+	  Buckingham Palace is recognised around the world as the home of the monarch, the focus of national and royal celebrations, 
+	  as well as the backdrop to the regular Changing the Guard ceremony. 
+	  Buckingham Palace's magnificent State Rooms open to visitors each summer.
+    </p>
+    <p>
+	   <h4>Tower Bridge : </h4>
+       Tower Bridge is an iconic bascule bridge spanning the River Thames in London, 
+	   built between 1886 and 1894 to accommodate increased traffic and river traffic to the city's docks. 
+	   Its unique design by Horace Jones and John Wolfe Barry features two towers connected by walkways, 
+	   and its two central bascules can lift to allow tall ships to pass. 
+	   Now a major tourist attraction, visitors can explore the walkways, the engine rooms, and enjoy panoramic views of London.
+    </p>
+    <p>
+	   <h4>London Eye : </h4>
+	   At 135m, The London Eye is the world's largest cantilevered observation wheel. 
+	   It was conceived and designed by Marks Barfield Architects and was launched in 2000. 
+	   It has won over 85 awards for national and international tourism, outstanding architectural quality and engineering achievement.
+	</p>
+	<p>
+	   <h4>Big Ben : </h4>
+	   Big Ben is the popular name for the Great Bell within the 96-meter (315-foot) Elizabeth Tower, 
+	   a landmark at the north end of the Houses of Parliament in London, England. 
+	   The iconic clock tower, built between 1843 and 1859, is renowned for its accuracy, 
+	   the size of its four-faced clock, and its distinctive chimes, which have been a symbol of London and the UK for over a century.
+	</p>
+	<p>
+	   <h4>British Museum</h4>
+	   The British Museum is a major London institution, founded in 1753, that houses a vast, 
+	   free-to-enter collection of eight million objects documenting human history, art, and culture from across the world. 
+	   Located in Bloomsbury, its permanent collection is the largest in the world, featuring famous artifacts like the Rosetta Stone and the Elgin Marbles. 
+	   Opened to the public in 1759, it was the first national public museum in the world and remains a significant cultural landmark.
+	</p>
+	<p>
+	   <h4>London Street</h4>
+	   London's streets vary from famous cultural landmarks and shopping destinations to historically significant routes and bustling residential areas, 
+	   offering a diverse experience of the city. 
+	   Key streets include Oxford Street for shopping, Abbey Road for its Beatles connection, Brick Lane for its multicultural atmosphere, 
+	   and Downing Street, home to the Prime Minister. 
+	   Other streets like Portobello Road and Bond Street are renowned for their unique character and high-end retailers.
+	</p>
+	<p>
+	  <h4>Hyde Park</h4>
+	   Hyde Park is famous for being London's largest royal park, a large urban oasis for recreation and events, 
+	   and for historic sites like Speaker's Corner where public speeches are made, the Serpentine Lake for boating and swimming, 
+	   and monuments such as the Diana Memorial Fountain and the Holocaust Memorial. 
+	   It also hosts major events, including the popular Hyde Park Winter Wonderland in the winter and major open-air concerts in the summer.
+	</p>
+  </section>
+
+  <!-- Must Visit -->
+<section id="places">
+  <h2>📍 Must-Visit Places</h2>
+  <ul>
+    <li>🏰 Buckingham Palace – The residence of the British monarch</li>
+    <li>🌉 Tower Bridge – Iconic symbol of London</li>
+    <li>🎡 London Eye – A giant observation wheel on the Thames</li>
+    <li>🕰 Big Ben & Houses of Parliament – Iconic London landmark</li>
+    <li>🎨 British Museum – One of the world’s best museums</li>
+    <li>🚶‍♂️ London Street – Explore the charming city streets</li>
+	<li>🌳 Hyde Park – One of London’s largest royal parks</li>
+	<!-- New item -->
+  </ul>
+</section>
+
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>&#128248 London Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/london street.jpg" alt="London Street">
+	  <div class="card-content">
+	  <h3>London Street</h3>
+	  </div>
+	  </div>
+      <div class="card"><img src="./photos/big ben.jpg" alt="Big Ben">
+	  <div class="card-content">
+	  <h3>Big Ben</h3>
+	  </div>
+	  </div>
+      <div class="card"><img src="./photos/tower bridge.jpg" alt="Tower Bridge">
+	  <div class="card-content">
+	  <h3>Tower Bridge</h3>
+	  </div>
+	  </div>
+      <div class="card"><img src="./photos/london eye.jpg" alt="London Eye">
+	  <div class="card-content">
+	  <h3>London Eye</h3>
+	  </div>
+	  </div>
+	  <div class="card"><img src="./photos/british museum.jpg" alt="British Museum">
+	  <div class="card-content">
+	  <h3>British Museum</h3>
+	  </div>
+	  </div>
+	  <div class="card"><img src="./photos/Buckingham Palace.jpg" alt="Buckingham Palace">
+	  <div class="card-content">
+	  <h3>Buckingham Palace</h3>
+	  </div>
+	  </div>
+	  <div class="card"><img src="./photos/Hyde Park.jpg" alt="Hyde Park">
+	  <div class="card-content">
+	  <h3>Hyde Park</h3>
+	  </div>
+	  </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Travel Diary | London Page  <span style="color: red;">&#10084;</span></p>
+  </footer>
+</body>
+</html>

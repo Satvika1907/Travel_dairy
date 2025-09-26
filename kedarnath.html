@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kedarnath Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fbfdfc;
+      color: #163a3a;
+    }
+    header {
+      background: url('./photos/kedarnath-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #274155;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffd166; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #274155;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #274155;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #274155;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #f1fbff;
+      color: #274155;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+
+    /* small tweaks for mobile */
+    @media (max-width:700px){
+      .sidebar{ display:none; }
+      header{ min-height:45vh }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Kedarnath — Abode of Lord Shiva</h1></header>
+  <nav>
+    <a href="index.html">🏔️ Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About Kedarnath</h2>
+    <p>Perched high in the Garhwal Himalayas on the banks of the Mandakini River, <strong>Kedarnath</strong> is one of India’s most sacred Hindu pilgrimage sites — home to the ancient Kedarnath Temple dedicated to Lord Shiva.</p>
+    <p>The temple town sits amid snow-capped peaks and glaciers and is renowned for its spiritual atmosphere and challenging, yet rewarding, trek from Gaurikund.</p>
+	<p>The Kedarnath Temple is a revered Hindu pilgrimage site dedicated to Lord Shiva, 
+	located in the Garhwal Himalayas of Uttarakhand, India. 
+	It is one of the 12 Jyotirlingas and a key site in the Char Dham pilgrimage. 
+	Legend says the temple was built by the Pandavas and later re-established by the philosopher Adi Shankaracharya in the 8th century AD.
+	The temple is famous for its Swayambhu Lingam, a natural conical rock formation symbolizing Lord Shiva, 
+	and is only open for about six months of the year due to harsh Himalayan winters.</p>
+	<p>Kedarnatha Temple is a Hindu temple, one of the twelve jyotirlinga of Śiva. 
+	The temple is located on the Garhwal Himalayan range near the Mandākinī river, in the state of Uttarakhand, India. 
+	Due to extreme weather conditions, the temple is open to the general public only between the months of April and November.
+	During the winters, the vigraha (deity) of the temple is carried down to Ukhimath to be worshiped for the next six months. 
+	Kedarnatha is seen as a homogeneous form of Śiva, the 'Lord of Kēdārakhaṇḍa', the historical name of the region.</p>
+	<p>The temple is not directly accessible by road and has to be reached by a 17 kilometres (11 mi) uphill trek from Gaurikuṇḍa. 
+	According to Hindu legends, the temple was initially built by the Pāṇḍavas, 
+	and is one of the twelve Jyotirlingas, the holiest Hindu shrines of Śiva.
+	The Pāṇḍava were supposed to have pleased Śiva by doing penance in Kēdāranātha.
+	The temple is one of the four major sites in India's Chota Char Dham pilgrimage of Northern Himalayas 
+	and is the first of the Pañca Kēdāra pilgrimage sites. This temple is the highest among the 12 Jyotirlingas.
+	It is one of the 275 paadal petra sthalams expounded in the Tēvaram. 
+	This temple is sung of by Tirugnāṇasambandar, Appar, Sundarar and Sekkizhar in their Tēvaram texts.</p>
+    <p>Kēdāranātha was the worst affected area during the 2013 flash floods in North India. 
+	The temple complex, surrounding areas, and Kēdāranātha town suffered extensive damage, 
+	but the temple structure did not suffer any major damage. 
+	A large rock among the debris acted as a barrier, protecting the temple from the flood.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Altitude: ~3,583 m (11,755 ft)</span>
+        <span class="pill">Best time: May–July (pilgrimage season)</span>
+        <span class="pill">Part of: Char Dham / One of the 12 Jyotirlingas</span>
+      </div>
+    </div>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit & Nearby</h2>
+    <ul>
+      <li>🛕 Kedarnath Temple – The ancient stone temple and main shrine.</li>
+      <li>❄️ Chorabari Glacier (Gandharva Chhaur) – Source of the Mandakini River.</li>
+      <li>🥾 Gaurikund – Base/start point of the Kedarnath trek.</li>
+      <li>🌄 Vasuki Tal – High-altitude lake for trekkers and campers.</li>
+      <li>🏕️ Triyuginarayan – Mythological site where Shiva & Parvati are said to have married.</li>
+      <li>🏔️ Bhairavnath Temple – Small shrine with panoramic views.</li>
+      <li>🚡 Helicopter landing points – Sonprayag/Phata for aerial access.</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 Kedarnath Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/kedarnath-temple.jpg" alt="Kedarnath Temple" /><div class="card-content"><h3>Kedarnath Temple</h3></div></div>
+      <div class="card"><img src="./photos/chorabari-glacier.jpg" alt="Chorabari Glacier" /><div class="card-content"><h3>Chorabari / Gandharva Chhaur</h3></div></div>
+      <div class="card"><img src="./photos/gaurikund.jpg" alt="Gaurikund" /><div class="card-content"><h3>Gaurikund (Trailhead)</h3></div></div>
+      <div class="card"><img src="./photos/vasuki-tal.jpg" alt="Vasuki Tal" /><div class="card-content"><h3>Vasuki Tal</h3></div></div>
+      <div class="card"><img src="./photos/triyuginarayan.jpg" alt="Triyuginarayan" /><div class="card-content"><h3>Triyuginarayan</h3></div></div>
+      <div class="card"><img src="./photos/kedarnath-night.jpeg" alt="Kedarnath night" /><div class="card-content"><h3>Temple at Dusk</h3></div></div>
+      <div class="card"><img src="./photos/mandakini-river.jpg" alt="Mandakini River" /><div class="card-content"><h3>Mandakini River</h3></div></div>
+      <div class="card"><img src="./photos/helicopter-view.jpg" alt="Helicopter view" /><div class="card-content"><h3>Aerial View</h3></div></div>
+    </div>
+  </section>
+  <footer>
+  <p>&copy; 2025 Kedarnath Travel | Temple Page <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USA Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background: url('./photos/usa-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #0b2a4a;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffcc00; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #0b2a4a;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #0b2a4a;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #0b2a4a;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #eef6ff;
+      color: #0b2a4a;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+  </style>
+</head>
+<body>
+  <header><h1>Explore the USA</h1></header>
+  <nav>
+    <a href="index.html">🏙️ Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About the United States</h2>
+    <p>A vast and diverse country, the <strong>United States of America</strong> offers everything from sweeping natural landscapes to iconic city skylines and cultural landmarks.</p>
+    <p>From the historic streets of <strong>Boston</strong> to the sun-soaked beaches of <strong>California</strong>, the USA blends natural wonder with cultural dynamism.</p>
+	<p>The United States of America (USA), also known as the United States (U.S.) or America, 
+	is a country primarily located in North America.
+	It is a federal republic of 50 states and a federal capital district, <strong>Washington, D.C</strong>. 
+	The 48 contiguous states border Canada to the north and Mexico to the south, 
+	with the semi-exclave of Alaska in the northwest and the archipelago of Hawaii in the Pacific Ocean. 
+	The United States also asserts sovereignty over five major island territories and various uninhabited islands in Oceania 
+	and the Caribbean. It is a megadiverse country, with the world's third-largest land area 
+	and third-largest population, exceeding 340 million.</p>
+	<p>Paleo-Indians migrated from North Asia to North America over 12,000 years ago, 
+	and formed various civilizations. Spanish colonization established Spanish Florida in 1513, 
+	the first European colony in what is now the continental United States. 
+	British colonization followed with the 1607 settlement of Virginia, the first of the Thirteen Colonies. 
+	Forced migration of enslaved Africans supplied the labor force to sustain the Southern Colonies' plantation economy. 
+	Clashes with the British Crown over taxation and lack of parliamentary representation sparked the American Revolution, 
+	leading to the Declaration of Independence on July 4, 1776. </p>
+	<p>Victory in the 1775–1783 Revolutionary War brought international recognition of U.S. sovereignty and fueled westward expansion, 
+	dispossessing native inhabitants. 
+	As more states were admitted, a North–South division over slavery led the Confederate States of America 
+	to attempt secession and fight the Union in the 1861–1865 American Civil War. 
+	With the United States' victory and reunification, slavery was abolished nationally. 
+	By 1900, the country had established itself as a great power, a status solidified after its involvement in World War I. 
+	Following Japan's attack on Pearl Harbor in 1941, the U.S. entered World War II. 
+	Its aftermath left the U.S. and the Soviet Union as rival superpowers, 
+	competing for ideological dominance and international influence during the Cold War. 
+	The Soviet Union's collapse in 1991 ended the Cold War, leaving the U.S. as the world's sole superpower.</p>
+	</p>A developed country, the U.S. ranks high in economic competitiveness, innovation, and higher education.
+	Accounting for over a quarter of nominal global economic output, its economy has been the world's largest since about 1890. 
+	It is the wealthiest country, with the highest disposable household income per capita among OECD members, 
+	though its wealth inequality is one of the most pronounced in those countries. 
+	Shaped by centuries of immigration, the culture of the U.S. is diverse and globally influential. 
+	Making up more than a third of global military spending, the country has one of the strongest militaries and is a designated nuclear state.
+	A member of numerous international organizations, the U.S. plays a major role in global political, cultural, economic, and military affairs.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Best time: Apr–Jun & Sep–Nov</span>
+        <span class="pill">Languages: English (widely spoken)</span>
+        <span class="pill">Famous for: National parks, cities & road trips</span>
+      </div>
+    </div>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit Places</h2>
+    <ul>
+      <li>🗽 Statue of Liberty (New York) – Symbol of freedom and welcome.</li>
+      <li>🌉 Golden Gate Bridge (San Francisco) – Majestic suspension bridge with foggy views.</li>
+      <li>🏜️ Grand Canyon (Arizona) – Immense canyon with layered bands of red rock.</li>
+      <li>🎭 Times Square (New York) – The bustling heart of Manhattan's theatre district.</li>
+      <li>🏛️ Smithsonian Museums (Washington, D.C.) – World-class museums (many with free entry).</li>
+      <li>🌲 Yellowstone National Park – Geysers, wildlife, and dramatic landscapes.</li>
+      <li>🎬 Hollywood & Walk of Fame (Los Angeles) – Entertainment industry landmarks.</li>
+      <li>🏛️ The White House (Washington, D.C.) – US presidential residence and historic site.</li>
+      <li>🗿 Mount Rushmore (South Dakota) – Monumental presidential carvings.</li>
+      <li>🏖️ Miami Beach (Florida) – Sunny beaches, art deco, and vibrant nightlife.</li>
+      <li>🏙️ Chicago Loop & Millennium Park (Illinois) – Architecture and public art attractions.</li>
+      <li>🚀 Kennedy Space Center (Florida) – US space launch history and exhibits.</li>
+      <li>🏞️ Zion National Park (Utah) – Towering cliffs and narrow canyons for hikers.</li>
+      <li>🌉 Brooklyn Bridge (New York) – Historic bridge with skyline views.</li>
+      <li>🏞️ Napa Valley (California) – Renowned wine country and scenic drives.</li>
+      <li>🧭 Route 66 – Classic American road trip route stretching coast-to-coast.</li>
+      <li>🌊 Niagara Falls (New York) – Majestic waterfalls on the US-Canada border.</li>
+      <li>🎢 Disney World (Florida) – The world’s most famous theme park resort.</li>
+      <li>🤠 Texas – Known for cowboy culture, BBQ, and vast landscapes.</li>
+      <li>🏙️ One Vanderbilt (New York) – Skyscraper with stunning observation decks.</li>
+      <li>🏝️ Key West (Florida) – Laid-back island vibes and beautiful sunsets.</li>
+      <li>🏇 Kentucky – Famous for horse racing, bourbon, and bluegrass music.</li>
+      <li>🏖️ Maryland – Coastal charm, Chesapeake Bay, and historic Annapolis.</li>
+      <li>🏙️ Boston (Massachusetts) – Cradle of American history and culture.</li>
+      <li>🏢 Downtown (various cities) – Iconic skylines and vibrant city centers.</li>
+      <li>🏔️ Colorado – Rocky Mountains, skiing, and outdoor adventure.</li>
+      <li>🍁 Vermont – Fall foliage, maple syrup, and charming towns.</li>
+      <li>🌾 Oklahoma – Native heritage, Route 66, and Great Plains beauty.</li>
+      <li>🎰 Las Vegas (Nevada) – World-famous casinos, shows, and nightlife.</li>
+      <li>🌆 New Jersey – Boardwalks, beaches, and close to NYC.</li>
+      <li>🏛️ Pennsylvania – Independence Hall, Liberty Bell, and Amish country.</li>
+      <li>🌄 Virginia – Blue Ridge Mountains and colonial history.</li>
+      <li>🏟️ Indiana – Known for the Indy 500 and heartland culture.</li>
+      <li>🏙️ Chicago (Illinois) – Renowned for architecture, deep-dish pizza, and Lake Michigan.</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 USA Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/statue-of-liberty.jpg" alt="Statue of Liberty" /><div class="card-content"><h3>Statue of Liberty</h3></div></div>
+      <div class="card"><img src="./photos/golden-gate.jpg" alt="Golden Gate Bridge" /><div class="card-content"><h3>Golden Gate Bridge</h3></div></div>
+      <div class="card"><img src="./photos/grand-canyon.jpg" alt="Grand Canyon" /><div class="card-content"><h3>Grand Canyon</h3></div></div>
+      <div class="card"><img src="./photos/times-square.jpg" alt="Times Square" /><div class="card-content"><h3>Times Square</h3></div></div>
+      <div class="card"><img src="./photos/smithsonian.jpg" alt="Smithsonian" /><div class="card-content"><h3>Smithsonian Museums</h3></div></div>
+      <div class="card"><img src="./photos/yellowstone.jpg" alt="Yellowstone" /><div class="card-content"><h3>Yellowstone</h3></div></div>
+      <div class="card"><img src="./photos/hollywood.jpg" alt="Hollywood" /><div class="card-content"><h3>Hollywood</h3></div></div>
+      <div class="card"><img src="./photos/white-house.jpg" alt="White House" /><div class="card-content"><h3>The White House</h3></div></div>
+      <div class="card"><img src="./photos/mount-rushmore.jpg" alt="Mount Rushmore" /><div class="card-content"><h3>Mount Rushmore</h3></div></div>
+      <div class="card"><img src="./photos/miami-beach.jpg" alt="Miami Beach" /><div class="card-content"><h3>Miami Beach</h3></div></div>
+      <div class="card"><img src="./photos/chicago-millennium-park.jpg" alt="Chicago Millennium Park" /><div class="card-content"><h3>Millennium Park</h3></div></div>
+      <div class="card"><img src="./photos/kennedy-space-center.jpg" alt="Kennedy Space Center" /><div class="card-content"><h3>Kennedy Space Center</h3></div></div>
+      <div class="card"><img src="./photos/zion.jpg" alt="Zion National Park" /><div class="card-content"><h3>Zion National Park</h3></div></div>
+      <div class="card"><img src="./photos/brooklyn-bridge.jpg" alt="Brooklyn Bridge" /><div class="card-content"><h3>Brooklyn Bridge</h3></div></div>
+      <div class="card"><img src="./photos/napa-valley.jpg" alt="Napa Valley" /><div class="card-content"><h3>Napa Valley</h3></div></div>
+      <div class="card"><img src="./photos/route-66.jpg" alt="Route 66" /><div class="card-content"><h3>Route 66</h3></div></div>
+      <div class="card"><img src="./photos/niagara-falls.jpg" alt="Niagara Falls" /><div class="card-content"><h3>Niagara Falls</h3></div></div>
+      <div class="card"><img src="./photos/disney-world.jpg" alt="Disney World" /><div class="card-content"><h3>Disney World</h3></div></div>
+      <div class="card"><img src="./photos/texas.jpg" alt="Texas" /><div class="card-content"><h3>Texas</h3></div></div>
+      <div class="card"><img src="./photos/one-vanderbilt.jpg" alt="One Vanderbilt" /><div class="card-content"><h3>One Vanderbilt</h3></div></div>
+      <div class="card"><img src="./photos/keywest.jpg" alt="Key West" /><div class="card-content"><h3>Key West</h3></div></div>
+      <div class="card"><img src="./photos/kentucky.jpg" alt="Kentucky" /><div class="card-content"><h3>Kentucky</h3></div></div>
+      <div class="card"><img src="./photos/maryland.jpg" alt="Maryland" /><div class="card-content"><h3>Maryland</h3></div></div>
+      <div class="card"><img src="./photos/boston.jpg" alt="Boston" /><div class="card-content"><h3>Boston</h3></div></div>
+      <div class="card"><img src="./photos/downtown.jpg" alt="Downtown" /><div class="card-content"><h3>Downtown</h3></div></div>
+      <div class="card"><img src="./photos/colorado.jpg" alt="Colorado" /><div class="card-content"><h3>Colorado</h3></div></div>
+      <div class="card"><img src="./photos/vermont.jpg" alt="Vermont" /><div class="card-content"><h3>Vermont</h3></div></div>
+      <div class="card"><img src="./photos/oklahoma.jpg" alt="Oklahoma" /><div class="card-content"><h3>Oklahoma</h3></div></div>
+      <div class="card"><img src="./photos/las-vegas.jpg" alt="Las Vegas" /><div class="card-content"><h3>Las Vegas</h3></div></div>
+      <div class="card"><img src="./photos/new-jersey.jpg" alt="New Jersey" /><div class="card-content"><h3>New Jersey</h3></div></div>
+      <div class="card"><img src="./photos/pennsylvania.jpg" alt="Pennsylvania" /><div class="card-content"><h3>Pennsylvania</h3></div></div>
+      <div class="card"><img src="./photos/virginia.jpg" alt="Virginia" /><div class="card-content"><h3>Virginia</h3></div></div>
+      <div class="card"><img src="./photos/indiana.jpg" alt="Indiana" /><div class="card-content"><h3>Indiana</h3></div></div>
+      <div class="card"><img src="./photos/chicago.jpg" alt="Chicago" /><div class="card-content"><h3>Chicago</h3></div></div>
+	  <div class="card"><img src="./photos/portland.jpg" alt="Portland" /><div class="card-content"><h3>Portland</h3></div></div>
+    </div>
+  </section>
+  <footer>
+  <p>&copy; 2025 My Travel Diary | USA Page <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

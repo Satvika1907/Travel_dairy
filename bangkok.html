@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bangkok Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fbfdfc;
+      color: #163a3a;
+    }
+    header {
+      background: url('./photos/bangkok-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #0a6b5c;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffd166; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #0a6b5c;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #0a6b5c;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #0a6b5c;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #e9fff7;
+      color: #0a6b5c;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+
+    /* small tweaks for mobile */
+    @media (max-width:700px){
+      .sidebar{ display:none; }
+      header{ min-height:45vh }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Discover Bangkok</h1></header>
+  <nav>
+    <a href="index.html">🚤 Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+
+  <section id="about">
+    <h2>About Bangkok</h2>
+    <p>Bangkok, Thailand’s bustling capital, mixes glittering temples and royal palaces with lively markets, riverside life and a thriving street-food and nightlife scene.</p>
+    <p>From the ornate Grand Palace and the Reclining Buddha at Wat Pho to colorful markets and riverside cruises along the Chao Phraya, Bangkok offers contrasts at every turn.</p>
+	<p>Bangkok,officially known in Thai as Krung Thep Maha Nakhon and colloquially as Krung Thep,
+	is the capital and most populous city of Thailand. 
+	The city occupies 1,568.7 square kilometres (605.7 sq mi) in the Chao Phraya River delta in central Thailand 
+	and has an estimated population of 10 million people as of 2024, 13% of the country's population. 
+	Over 17.4 million people (25% of Thailand's population) live within the surrounding Bangkok Metropolitan Region
+	as of the 2021 estimate, making Bangkok a megacity and an extreme primate city, dwarfing Thailand's 
+	other urban centres in both size and importance to the national economy.</p>
+	<p>Bangkok traces its roots to a small trading post during the Ayutthaya era in the 15th century, 
+	which eventually grew and became the site of two capital cities, Thonburi in 1767 and Rattanakosin in 1782. 
+	Bangkok was at the heart of the modernization of Siam during the late 19th century, as the country faced pressures from the West. 
+	The city was at the centre of the country's political struggles throughout the 20th century, 
+	as Siam—later renamed Thailand—abolished absolute monarchy, adopted constitutional rule, 
+	and underwent numerous coups and several uprisings. 
+	The city, incorporated as a special administrative area under the Bangkok Metropolitan Administration in 1972, 
+	grew rapidly during the 1960s through the 1980s and now exerts a significant impact on Thailand's politics, economy, education, media, and modern society.</p>
+	<p>The Asian investment boom in the 1980s and 1990s led many multinational corporations to locate their regional headquarters in Bangkok. 
+	The city is now a regional force in finance, business, and pop culture. 
+	It is an international hub for transport and health care, and has emerged as a centre for the arts, fashion, and entertainment.
+	The city is known for its street life and cultural landmarks, as well as its red-light districts. 
+	The Grand Palace and Buddhist temples, including Wat Arun and Wat Pho, 
+	stand in contrast with other tourist attractions such as the nightlife scenes of Khaosan Road and Patpong. 
+	Bangkok is among the world's top tourist destinations and has been named the world's most visited city in several international rankings.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Best time: Nov–Feb (cool, dry season)</span>
+        <span class="pill">Languages: Thai (and English widely used in tourist areas)</span>
+        <span class="pill">Famous for: Temples, street food & river life</span>
+      </div>
+    </div>
+    <!-- source notes for key facts: Grand Palace, Wat Pho, Wat Arun and best season. -->
+    <p style="font-size:12px;color:#556; margin-top:8px;">
+      Key attractions referenced from Bangkok travel guides and official tourism sources. :contentReference[oaicite:1]{index=1}
+    </p>
+  </section>
+
+  <section id="places">
+    <h2>📍 Must-Visit Places</h2>
+    <ul>
+      <li>🏯 Grand Palace & Wat Phra Kaew – Bangkok’s most iconic royal complex and the Emerald Buddha. :contentReference[oaicite:2]{index=2}</li>
+      <li>🌅 Wat Arun (Temple of Dawn) – Stunning riverside temple, beautiful at sunset. :contentReference[oaicite:3]{index=3}</li>
+      <li>🛕 Wat Pho – Home of the Reclining Buddha and traditional Thai massage. :contentReference[oaicite:4]{index=4}</li>
+      <li>🛍️ Chatuchak Weekend Market – Massive market for everything from clothes to food. :contentReference[oaicite:5]{index=5}</li>
+      <li>🎒 Khao San Road – Backpacker hub with nightlife, street food and cheap stays. :contentReference[oaicite:6]{index=6}</li>
+      <li>🏮 Chinatown (Yaowarat) – Nighttime street-food paradise and gold shops.</li>
+      <li>🛥️ Chao Phraya River cruises & long-tail boats – See Bangkok from the water.</li>
+      <li>🖼️ Jim Thompson House – Museum and traditional Thai architecture.</li>
+      <li>🏙️ Rooftop bars & skyline views – Bangkok's skyline at dusk is a must-see.</li>
+      <li>🧘 Lumphini Park – Green space for a morning run or relaxed stroll.</li>
+      <li>🛍️ Siam Square / MBK / Iconsiam – Shopping hubs for all budgets.</li>
+      <li>🌊 Asiatique – Riverside night market and entertainment complex.</li>
+	  <li>🌊 Asiatique – Riverside night market and entertainment complex.</li>
+      <li>🏖️ Pattaya – Famous beach city just 2 hours from Bangkok, known for water sports and nightlife.</li>
+    </ul>
+  </section>
+
+  <section id="gallery">
+    <h2>📸 Bangkok Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/grand-palace.jpg" alt="Grand Palace" /><div class="card-content"><h3>Grand Palace</h3></div></div>
+      <div class="card"><img src="./photos/wat-arun.jpg" alt="Wat Arun" /><div class="card-content"><h3>Wat Arun (Temple of Dawn)</h3></div></div>
+      <div class="card"><img src="./photos/wat-pho.jpg" alt="Wat Pho" /><div class="card-content"><h3>Wat Pho - Reclining Buddha</h3></div></div>
+      <div class="card"><img src="./photos/chatuchak.jpg" alt="Chatuchak Market" /><div class="card-content"><h3>Chatuchak Market</h3></div></div>
+      <div class="card"><img src="./photos/khao-san.jpg" alt="Khao San Road" /><div class="card-content"><h3>Khao San Road</h3></div></div>
+      <div class="card"><img src="./photos/chinatown.jpg" alt="Chinatown" /><div class="card-content"><h3>Chinatown (Yaowarat)</h3></div></div>
+      <div class="card"><img src="./photos/chao-phraya.jpg" alt="Chao Phraya River" /><div class="card-content"><h3>Chao Phraya River</h3></div></div>
+      <div class="card"><img src="./photos/jim-thompson.jpg" alt="Jim Thompson House" /><div class="card-content"><h3>Jim Thompson House</h3></div></div>
+      <div class="card"><img src="./photos/asiatique.jpg" alt="Asiatique" /><div class="card-content"><h3>Asiatique Riverside</h3></div></div>
+      <div class="card"><img src="./photos/siam.jpg" alt="Siam" /><div class="card-content"><h3>Siam Shopping District</h3></div></div>
+      <div class="card"><img src="./photos/rooftop.jpg" alt="Bangkok Rooftop" /><div class="card-content"><h3>Skyline & Rooftop Views</h3></div></div>
+      <div class="card"><img src="./photos/lumphini.jpg" alt="Lumphini Park" /><div class="card-content"><h3>Lumphini Park</h3></div></div>
+	  <div class="card"><img src="./photos/pattaya.jpg" alt="Pattaya" /><div class="card-content"><h3>Pattaya Beach</h3></div></div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Travel Diary | Bangkok Page <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

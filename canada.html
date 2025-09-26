@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canada Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fbfdfc;
+      color: #163a3a;
+    }
+    header {
+      background: url('./photos/canada-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #274155;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffd166; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #274155;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #274155;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #274155;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #f1fbff;
+      color: #274155;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+
+    /* small tweaks for mobile */
+    @media (max-width:700px){
+      .sidebar{ display:none; }
+      header{ min-height:45vh }
+    }
+
+    /* small content tweaks */
+    .lead { line-height:1.6; color: #1f3b3b; }
+    ul { color: #163a3a; }
+  </style>
+</head>
+<body>
+  <header><h1>Canada — Lakes, Peaks & Northern Lights</h1></header>
+  <nav>
+    <a href="index.html">🍁 Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About Canada</h2>
+    <p class="lead">Stretching from the Atlantic to the Pacific and up into the Arctic, <strong>Canada</strong> 
+	is the world’s second-largest country by area. Known for vast wilderness, pristine lakes, 
+	dramatic mountain ranges and vibrant multicultural cities, Canada offers both epic outdoor adventures and cozy urban comforts.</p>
+    <p class="lead">Officially bilingual (English & French), Canada is home to national parks, 
+	Indigenous cultures, and spectacular natural phenomena like the Aurora Borealis in the far north.</p>
+	<p>Canada is a country in North America. 
+	Its ten provinces and three territories extend from the Atlantic Ocean to the Pacific Ocean and northward into the Arctic Ocean,
+	making it the second-largest country by total area, with the longest coastline of any country. 
+	Its border with the United States is the longest international land border. 
+	The country is characterized by a wide range of both meteorologic and geological regions. 
+	With a population of over 41 million, it has widely varying population densities, 
+	with the majority residing in its urban areas and large areas being sparsely populated. 
+	Canada's capital is Ottawa and its three largest metropolitan areas are Toronto, Montreal, and Vancouver.</p>
+	<p>Indigenous peoples have continuously inhabited what is now Canada for thousands of years. 
+	Beginning in the 16th century, British and French expeditions explored and later settled along the Atlantic coast. 
+	As a consequence of various armed conflicts, France ceded nearly all of its colonies in North America in 1763. 
+	In 1867, with the union of three British North American colonies through Confederation, 
+	Canada was formed as a federal dominion of four provinces. 
+	This began an accretion of provinces and territories resulting in the displacement of Indigenous populations, 
+	and a process of increasing autonomy from the United Kingdom. 
+	This increased sovereignty was highlighted by the Statute of Westminster, 1931, and culminated in the Canada Act 1982, 
+	which severed the vestiges of legal dependence on the Parliament of the United Kingdom.</p>
+	<p>Canada is a parliamentary democracy and a constitutional monarchy in the Westminster tradition. 
+	The country's head of government is the prime minister, 
+	who holds office by virtue of their ability to command the confidence of the elected House of Commons and 
+	is appointed by the governor general, representing the monarch of Canada, the ceremonial head of state. 
+	The country is a Commonwealth realm and is officially bilingual (English and French) in the federal jurisdiction. 
+	It is very highly ranked in international measurements of government transparency, quality of life, economic competitiveness, 
+	innovation, education and human rights. It is one of the world's most ethnically diverse and multicultural nations, 
+	the product of large-scale immigration. Canada's long and complex relationship with the United States has had a significant impact 
+	on its history, economy, and culture.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Capital: Ottawa</span>
+        <span class="pill">Best time: June–September</span>
+        <span class="pill">Languages: English, French</span>
+      </div>
+    </div>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit & Highlights</h2>
+    <ul>
+      <li>🗻 Banff & Lake Louise – Rocky Mountain scenery and glacier-fed lakes.</li>
+      <li>🌊 Vancouver & Pacific Coast – Coastal city with forests and ocean views.</li>
+      <li>🧊 Churchill – Polar bears and the aurora in Manitoba.</li>
+      <li>🍁 Quebec City – Historic Old Town and French-Canadian culture.</li>
+      <li>🌆 Toronto – CN Tower, multicultural neighborhoods and islands.</li>
+      <li>🏔️ Jasper National Park – Dark-sky preserves and alpine lakes.</li>
+      <li>🚡 Whistler – World-class skiing and year-round outdoor sports.</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 Canada Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/banff-lake-louise.jpg" alt="Lake Louise" /><div class="card-content"><h3>Lake Louise, Banff</h3></div></div>
+      <div class="card"><img src="./photos/aurora-northern-lights.jpg" alt="Northern Lights" /><div class="card-content"><h3>Aurora Borealis</h3></div></div>
+      <div class="card"><img src="./photos/niagara-falls.jpg" alt="Niagara Falls" /><div class="card-content"><h3>Niagara Falls</h3></div></div>
+      <div class="card"><img src="./photos/vancouver-seawall.jpg" alt="Vancouver Seawall" /><div class="card-content"><h3>Vancouver Seawall</h3></div></div>
+      <div class="card"><img src="./photos/quebec-old-town.jpg" alt="Quebec City" /><div class="card-content"><h3>Old Quebec</h3></div></div>
+      <div class="card"><img src="./photos/whistler-mountain.jpg" alt="Whistler" /><div class="card-content"><h3>Whistler</h3></div></div>
+      <div class="card"><img src="./photos/toronto-skyline.jpg" alt="Toronto" /><div class="card-content"><h3>Toronto Skyline</h3></div></div>
+      <div class="card"><img src="./photos/polar-bear-churchill.jpg" alt="Polar Bear" /><div class="card-content"><h3>Polar Bears, Churchill</h3></div></div>
+    </div>
+  </section>
+  <footer>
+  <p>&copy; 2025 Canada Travel | Explore the True North <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

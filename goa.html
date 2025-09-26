@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goa Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Hero */
+    header {
+      background: url('./photos/goa-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0,0,0,0.55);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* Nav */
+    nav {
+      background: #112a1f;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    nav a:hover { color: #f4d03f; }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 {
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      margin-top: 0;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #112a1f;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a:hover {
+      width: 35px;
+      height: 8px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #112a1f;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+
+    footer {
+      background: #112a1f;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #eefcf6;
+      color: #112a1f;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header>
+    <h1>Welcome to Goa</h1>
+  </header>
+
+  <!-- Nav -->
+  <nav>
+    <a href="index.html">🏝️ Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must‑Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Goa</h2>
+    <p>
+      Goa, India’s smallest state, is world‑famous for its <em>sun‑kissed beaches</em>, <em>vibrant nightlife</em>,
+      Portuguese heritage, and tropical seafood cuisine. From golden sands to lush spice plantations and old churches,
+      Goa blends relaxation with rich cultural experiences.
+    </p>
+	<p>
+	  Goa is a state on the southwestern coast of India within the Konkan region, 
+	  geographically separated from the Deccan highlands by the Western Ghats.
+	  It is bordered by the Indian states of Maharashtra to the north and Karnataka to the east and south, 
+	  with the Arabian Sea forming its western coastline.
+	  It is India's smallest state by area and fourth-smallest by population.
+	  Panaji (also Panjim) is the state's capital, while Vasco da Gama is its largest city by population.
+	  The state's official language is Konkani, spoken by the majority of its inhabitants.
+	</p>
+	<p>
+	  The Portuguese, who first voyaged to the subcontinent in the early 16th century as merchants, 
+	  conquered it shortly thereafter.
+	  Goa became an overseas territory of the Portuguese Empire and part of what was then known as Portuguese India,
+	  remaining under Portuguese rule for approximately 451 years until its annexation by India in December 1961.
+	  The historic city of Margão or "Madgaon" still reflects the cultural legacy of colonisation.
+	</p>
+	<p>
+	  Goa is one of India’s most developed small states and has the second-highest GDP per capita among all Indian states,
+	  more than twice the national average GDP per capita.
+	  The Eleventh Finance Commission of India named Goa the best-placed state in terms of infrastructure, 
+	  while India's National Commission on Population ranked it as having the highest quality of life in the country 
+	  based on 12 socio-economic indicators.
+	  It ranks highest among Indian states in the Human Development Index, 
+	  and is the only Indian state classified as "very high" on the index
+	</p>
+	<p>
+	  Goa attracts a significant influx of both international and domestic tourists annually due to its white-sand beaches, 
+	  active nightlife, religious landmarks, and UNESCO World Heritage-listed architecture. 
+	  It also boasts rich biodiversity, lying near the Western Ghats, a biodiversity hotspot. 
+	  The North Goa district draws more visitors owing to its numerous restaurants, accommodation options, and a vibrant nightlife. 
+	  In contrast, South Goa is noted for its serene beaches and luxury resorts, catering primarily to high-end tourists seeking privacy and tranquility.
+	</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Best time: Nov–Feb</span>
+        <span class="pill">Famous for: Beaches & Parties</span>
+        <span class="pill">Culture: Indo‑Portuguese</span>
+      </div>
+    </div>
+    <div style="margin-top:24px;">
+      <h4>🏖️ Beaches</h4>
+      <p>Baga, Calangute, Palolem, and Anjuna are among the most iconic stretches of sand in India.</p>
+      <h4>⛪ Heritage</h4>
+      <p>Visit Old Goa’s UNESCO churches like Basilica of Bom Jesus and Sé Cathedral.</p>
+      <h4>🌿 Spice Plantations</h4>
+      <p>Explore lush plantations where nutmeg, cardamom, and black pepper thrive.</p>
+    </div>
+  </section>
+
+  <!-- Must Visit -->
+  <section id="places">
+    <h2>📍 Must‑Visit Places</h2>
+    <ul>
+      <li>🏖️ Baga Beach – Popular for water sports and nightlife</li>
+      <li>⛪ Basilica of Bom Jesus – UNESCO World Heritage site</li>
+      <li>🎉 Anjuna – Famous for flea markets & trance parties</li>
+      <li>🌅 Palolem Beach – Scenic crescent‑shaped bay</li>
+      <li>🌿 Spice Plantations – Guided eco tours</li>
+      <li>🏰 Fort Aguada – 17th‑century Portuguese fort</li>
+      <li>🛳️ Cruise Casino – Try your luck on luxury floating casinos along the Mandovi River.</li>
+      <li>🌊 Dudhsagar Waterfalls – Majestic four-tiered falls nestled in the Western Ghats.</li>
+      <li>🏛️Sé Cathedral – One of Asia’s largest churches with rich Portuguese history.</li>
+      <li>🏖️Calangute Beach – Goa’s largest beach known for water sports and nightlife.</li>
+
+    </ul>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>📸 Goa Gallery</h2>
+    <div class="gallery">
+      <div class="card">
+        <img src="./photos/baga-beach.jpg" alt="Baga Beach at sunset" />
+        <div class="card-content"><h3>Baga Beach</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/basilica-bom-jesus.jpg" alt="Basilica of Bom Jesus" />
+        <div class="card-content"><h3>Basilica of Bom Jesus</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/anjuna-market.jpg" alt="Anjuna Flea Market" />
+        <div class="card-content"><h3>Anjuna Market</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/palolem-beach.jpg" alt="Palolem Beach view" />
+        <div class="card-content"><h3>Palolem Beach</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/spice-plantation.jpg" alt="Goa spice plantation" />
+        <div class="card-content"><h3>Spice Plantation</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/fort-aguada.jpg" alt="Fort Aguada overlooking the sea" />
+        <div class="card-content"><h3>Fort Aguada</h3></div>
+      </div>
+	  <div class="card">
+        <img src="./photos/cruise-casino.jpg" alt="Cruise Casino" />
+        <div class="card-content"><h3>Cruise Casino</h3></div>
+      </div>
+	  <div class="card">
+        <img src="./photos/majestic-dudhsagar-waterfalls.jpg" alt="Majestic Dudhsagar Waterfalls" />
+        <div class="card-content"><h3>Majestic Dudhsagar Waterfalls</h3></div>
+      </div>
+	  <div class="card">
+        <img src="./photos/se-cathedral.jpg" alt="Se Cathedral" />
+        <div class="card-content"><h3>Se Cathedral</h3></div>
+      </div>
+	  <div class="card">
+        <img src="./photos/calangute-beach.jpg" alt="Calangute Beach" />
+        <div class="card-content"><h3>Calangute Beach</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Travel Diary | Goa Page <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

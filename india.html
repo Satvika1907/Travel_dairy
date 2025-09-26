@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Incredible India</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: url('./photos/india-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #1a1a1a;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ff9933; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #1a1a1a;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #1a1a1a;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #fff3e6;
+      color: #1a1a1a;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+  </style>
+</head>
+<body>
+  <header><h1>Welcome to Incredible India 🇮🇳</h1></header>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About India</h2>
+    <p><strong>India</strong> is a land of diversity – from the snow-capped Himalayas to the golden deserts of Rajasthan, the backwaters of Kerala to the bustling streets of Delhi and Mumbai.</p>
+    <p>Known for its <em>unity in diversity</em>, India is a melting pot of languages, cultures, cuisines, and traditions.</p>
+	<p>India, officially the Republic of India,is a country in South Asia. 
+	It is the seventh-largest country by area the most populous country since 2023 and, since its independence in 1947, the world's most populous democracy.
+	Bounded by the Indian Ocean on the south, the Arabian Sea on the southwest, and the Bay of Bengal on the southeast, 
+	it shares land borders with Pakistan to the west; China, Nepal, and Bhutan to the north; and Bangladesh and Myanmar to the east. 
+	In the Indian Ocean, India is near Sri Lanka and the Maldives; its Andaman and Nicobar Islands share a maritime border with Myanmar, Thailand, and Indonesia.</p>
+	<p>Modern humans arrived on the Indian subcontinent from Africa no later than 55,000 years ago.
+	Their long occupation, predominantly in isolation as hunter-gatherers, has made the region highly diverse.
+	Settled life emerged on the subcontinent in the western margins of the Indus river basin 9,000 years ago, 
+	evolving gradually into the Indus Valley Civilisation of the third millennium BCE.
+	By 1200 BCE, an archaic form of Sanskrit, an Indo-European language, had diffused into India from the northwest.
+	Its hymns recorded the early dawnings of Hinduism in India.
+	India's pre-existing Dravidian languages were supplanted in the northern regions.
+	By 400 BCE, caste had emerged within Hinduism, and Buddhism and Jainism had arisen, proclaiming social orders unlinked to heredity.
+	Early political consolidations gave rise to the loose-knit Maurya and Gupta Empires.
+	Widespread creativity suffused this era, but the status of women declined,and untouchability became an organised belief.
+	In South India, the Middle kingdoms exported Dravidian language scripts and religious cultures to the kingdoms of Southeast Asia.</p>
+	
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Best time: Oct–Mar</span>
+        <span class="pill">Languages: 22+ official languages</span>
+        <span class="pill">Famous for: Culture, Heritage, Food</span>
+      </div>
+    </div>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit Places</h2>
+    <ul>
+      <li>🕌 Taj Mahal – Symbol of love, Agra</li>
+      <li>🏔️ Leh-Ladakh – Adventure and stunning landscapes</li>
+      <li>🌊 Kerala Backwaters – Houseboats & serene beauty</li>
+      <li>🌆 Mumbai – The city of dreams</li>
+      <li>🌉 Kolkata – City of joy, culture & history</li>
+      <li>🌿 Meghalaya – Living root bridges</li>
+      <li>🏰 Jaipur – The Pink City</li>
+      <li>🏝️ Andaman & Nicobar Islands – Beaches & scuba diving</li>
+      <li>🛕 Varanasi – Spiritual capital of India</li>
+      <li>🐅 Ranthambore – Tiger Reserve</li>
+      <li>🏞️ Rishikesh – Yoga capital of the world</li>
+	  <li>🏔️ The Himalayas – Majestic mountain ranges</li>
+      <li>🏔️ The Himalayas – Majestic mountain ranges</li>
+      <li>❄️ Jammu & Kashmir – Paradise on Earth</li>
+      <li>🏖️ Vizag – Coastal beauty of Andhra Pradesh</li>
+      <li>⛷️ Manali – Snow adventures in Himachal</li>
+      <li>🕉️ Adiyogi – Statue of Lord Shiva, Coimbatore</li>
+      <li>🛕 Kedarnath – Sacred temple in Uttarakhand</li>
+      <li>🌇 Telangana – Blend of heritage and IT hub</li>
+      <li>🏙️ Delhi – Capital of India with heritage landmarks</li>
+      <li>⛵ Gateway of India – Iconic monument in Mumbai</li>
+      <li>🙏 Golden Temple – Spiritual Sikh shrine in Amritsar</li>
+      <li>🏰 Red Fort – Mughal masterpiece in Delhi</li>
+      <li>🎨 Jaipur – The Pink City of Rajasthan</li>
+	  <li>🚤 Alappuzha (Kerala) – Famous for houseboats & backwaters</li>
+	  <li>🏝️ Gokarna – Serene beaches & temples</li>
+      <li>🗿 Murdeshwar – Tall Shiva statue by the sea</li>
+      <li>🌳 Dandeli – Wildlife & adventure activities</li>
+	  <li>🌴 Goa – Beaches, nightlife & Portuguese charm</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 India Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/tajmahal.jpg" alt="Taj Mahal" /><div class="card-content"><h3>Taj Mahal</h3></div></div>
+      <div class="card"><img src="./photos/ladakh.jpg" alt="Leh Ladakh" /><div class="card-content"><h3>Leh-Ladakh</h3></div></div>
+      <div class="card"><img src="./photos/kerala.jpg" alt="Kerala Backwaters" /><div class="card-content"><h3>Kerala Backwaters</h3></div></div>
+      <div class="card"><img src="./photos/mumbai.jpg" alt="Mumbai" /><div class="card-content"><h3>Mumbai</h3></div></div>
+      <div class="card"><img src="./photos/kolkata.jpg" alt="Kolkata" /><div class="card-content"><h3>Kolkata</h3></div></div>
+      <div class="card"><img src="./photos/meghalaya.jpg" alt="Meghalaya" /><div class="card-content"><h3>Meghalaya</h3></div></div>
+      <div class="card"><img src="./photos/jaipur.jpg" alt="Jaipur" /><div class="card-content"><h3>Jaipur</h3></div></div>
+      <div class="card"><img src="./photos/andaman.jpg" alt="Andaman Islands" /><div class="card-content"><h3>Andaman Islands</h3></div></div>
+      <div class="card"><img src="./photos/varanasi.jpg" alt="Varanasi" /><div class="card-content"><h3>Varanasi</h3></div></div>
+      <div class="card"><img src="./photos/rishikesh.jpg" alt="Rishikesh" /><div class="card-content"><h3>Rishikesh</h3></div></div>
+	  <div class="card"><img src="./photos/himalayas.jpg" alt="Himalayas" /><div class="card-content"><h3>Himalayas</h3></div></div>
+      <div class="card"><img src="./photos/jammu-kashmir.jpg" alt="Jammu & Kashmir" /><div class="card-content"><h3>Jammu & Kashmir</h3></div></div>
+      <div class="card"><img src="./photos/vizag.jpg" alt="Vizag" /><div class="card-content"><h3>Vizag</h3></div></div>
+      <div class="card"><img src="./photos/manali.jpg" alt="Manali" /><div class="card-content"><h3>Manali</h3></div></div>
+      <div class="card"><img src="./photos/adiyogi.jpg" alt="Adiyogi" /><div class="card-content"><h3>Adiyogi</h3></div></div>
+      <div class="card"><img src="./photos/kedarnath.jpg" alt="Kedarnath" /><div class="card-content"><h3>Kedarnath</h3></div></div>
+      <div class="card"><img src="./photos/telangana.jpg" alt="Telangana" /><div class="card-content"><h3>Telangana</h3></div></div>
+      <div class="card"><img src="./photos/delhi.jpg" alt="Delhi" /><div class="card-content"><h3>Delhi</h3></div></div>
+      <div class="card"><img src="./photos/gateway-india.jpg" alt="Gateway of India" /><div class="card-content"><h3>Gateway of India</h3></div></div>
+      <div class="card"><img src="./photos/golden-temple.jpg" alt="Golden Temple" /><div class="card-content"><h3>Golden Temple</h3></div></div>
+      <div class="card"><img src="./photos/red-fort.jpg" alt="Red Fort" /><div class="card-content"><h3>Red Fort</h3></div></div>
+      <div class="card"><img src="./photos/pink-city.jpg" alt="Jaipur Pink City" /><div class="card-content"><h3>Jaipur – Pink City</h3></div></div>
+	  <div class="card"><img src="./photos/alappuzha.jpg" alt="Alappuzha Kerala" /><div class="card-content"><h3>Alappuzha</h3></div></div>
+	  <div class="card"><img src="./photos/gokarna.jpg" alt="Gokarna" /><div class="card-content"><h3>Gokarna</h3></div></div>
+      <div class="card"><img src="./photos/murdeshwar.jpg" alt="Murdeshwar" /><div class="card-content"><h3>Murdeshwar</h3></div></div>
+      <div class="card"><img src="./photos/dandeli.jpg" alt="Dandeli" /><div class="card-content"><h3>Dandeli</h3></div></div>
+	  <div class="card"><img src="./photos/goa.jpg" alt="Goa" /><div class="card-content"><h3>Goa</h3></div></div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 My Travel Diary | India Page <span style="color:#ff9933">❤️</span></p>
+  </footer>
+</body>
+</html>

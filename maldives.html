@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maldives Travel</title>
+  <style>
+    /* Global */
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Hero */
+    header {
+      background: url('./photos/maldives-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* Top Nav */
+    nav {
+      background: #0b1f28;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #f4d03f; }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: clamp(1.6rem, 3vw, 2rem);
+    }
+
+    /* Cards & Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content {
+      padding: 14px 16px;
+    }
+
+    /* Left Sidebar Dots */
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #0b1f28;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #0b1f28;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+
+    /* Footer */
+    footer {
+      background: #0b1f28;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+
+    /* Utilities */
+    .pill {
+      display: inline-block;
+      background: #e6f7fb;
+      color: #0b1f28;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+	
+	.sidebar a:hover {
+	   width:35px;
+	   height:8px;
+	}
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header>
+    <h1>Welcome to Maldives</h1>
+  </header>
+
+  <!-- Top Navigation -->
+  <nav>
+    <a href="index.html">🏝️ Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must‑Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+
+  <!-- Fixed Left Navigation -->
+  <div class="sidebar" aria-label="Section shortcuts">
+    <a href="#home" data-label="Home" aria-label="Jump to TravelDiary"></a>
+    <a href="#about" data-label="About" aria-label="Jump to About"></a>
+    <a href="#places" data-label="Places" aria-label="Jump to Places"></a>
+    <a href="#gallery" data-label="Gallery" aria-label="Jump to Gallery"></a>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About the Maldives</h2>
+    <p>
+      The Maldives is a tropical paradise of <strong>1,192 coral islands</strong> grouped into 26 atolls in the Indian Ocean.
+      Famous for its <em>turquoise lagoons</em>, <em>white‑sand beaches</em>, and <em>overwater villas</em>, it’s a dream
+      destination for snorkeling, diving, and slow‑life island escapes.
+    </p>
+	<p>
+	  The Maldives,officially the Republic of Maldives,and historically known as the Maldive Islands,
+	  is an archipelagic country in South Asia located in the Indian Ocean. 
+	  The Maldives is southwest of Sri Lanka and India, about 750 kilometres (470 miles; 400 nautical miles) from the Asian continent's mainland. 
+	  The Maldives' chain of 26 atolls stretches across the equator from Ihavandhippolhu Atoll in the north to Addu Atoll in the south.
+	</p>
+    <p>
+      Beyond its postcard views, Maldivian culture blends South Asian, African, and Arab influences, reflected in
+      traditional <em>boduberu</em> drumming, local cuisine like <em>mas huni</em>, and warm island hospitality.
+    </p>
+	<p>
+	  The Maldives is the smallest country in Asia. 
+	  Its land area is only 298 square kilometres (115 sq mi), but this is spread over roughly 90,000 square kilometres (35,000 sq mi) of the sea,
+	  making it one of the world's most spatially dispersed sovereign states. 
+	  With a population of 515,132 in the 2022 census, it is the second least populous country in Asia and the ninth-smallest country by area,
+	  but also one of the most densely populated countries. 
+	  The Maldives has an average ground-level elevation of around 1.5 metres (4 ft 11 in) above sea level,
+	  and a highest natural point of only 2.4 metres (7 ft 10 in), making it the world's lowest-lying country. 
+	  Some sources state the highest point, Mount Villingili, as 5.1 metres or 17 feet.
+	</p>
+
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Visa‑on‑arrival</span>
+        <span class="pill">Best time: Nov–Apr</span>
+        <span class="pill">Currency: MVR</span>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;">
+      <h4>🏝️ Overwater Villas</h4>
+      <p>
+        Synonymous with the Maldives, these villas sit above shallow lagoons with direct access to the water—perfect for
+        sunrise dips and stargazing nights.
+      </p>
+
+      <h4>🐠 Reefs & Marine Life</h4>
+      <p>
+        The reefs teem with life—from manta rays and whale sharks to vibrant corals—making it one of the planet’s top
+        dive and snorkel destinations.
+      </p>
+
+      <h4>🌅 Sandbanks & Sunsets</h4>
+      <p>
+        Charter a boat to a secluded sandbank for a private picnic or simply chase the pastel sunsets that paint the sky
+        every evening.
+      </p>
+    </div>
+  </section>
+
+  <!-- Must Visit -->
+  <section id="places">
+    <h2>📍 Must‑Visit Places</h2>
+    <ul>
+      <li>🏙️ Malé – The compact capital with markets, mosques, and seafront cafés</li>
+      <li>🛶 Maafushi – A budget‑friendly local island with water sports</li>
+      <li>🐋 Hanifaru Bay – Seasonal manta ray & whale shark hotspot</li>
+      <li>🏖️ Vaadhoo Island – Famous for the <em>Sea of Stars</em> bioluminescence</li>
+      <li>🌿 Addu Atoll – Lush, quiet atoll with cycling causeways</li>
+      <li>🤿 Banana Reef – One of the Maldives’ most iconic dive sites</li>
+	  <li>⛱️ Hulhumale Island – Artificial island with beachside charm</li>
+	  <li>🏨 Baros Maldives – Iconic overwater villas & luxury resort</li>
+    </ul>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>📸 Maldives Gallery</h2>
+    <div class="gallery">
+      <div class="card">
+        <img src="./photos/overwater-villa.jpg" alt="Overwater villas over a turquoise lagoon" />
+        <div class="card-content"><h3>Overwater Villas</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/male-city.jpg" alt="Aerial view of Malé city and harbor" />
+        <div class="card-content"><h3>Malé City</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/hanifaru-bay.jpg" alt="Manta rays swimming at Hanifaru Bay" />
+        <div class="card-content"><h3>Hanifaru Bay</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/sea-of-stars.jpg" alt="Bioluminescent Sea of Stars at Vaadhoo Island" />
+        <div class="card-content"><h3>Sea of Stars</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/banana-reef.jpg" alt="Divers exploring Banana Reef" />
+        <div class="card-content"><h3>Banana Reef</h3></div>
+      </div>
+      <div class="card">
+        <img src="./photos/sandbank-picnic.jpg" alt="Private sandbank picnic setup in the Maldives" />
+        <div class="card-content"><h3>Sandbank Picnic</h3></div>
+      </div>
+	  <div class="card">
+        <img src="./photos/hulhumale-island.jpg" alt="Hulhumale Island in Maldives" />
+        <div class="card-content"><h3>Hulhumale Island</h3></div>
+      </div>
+	  <div class="card">
+        <img src="./photos/baros-maldives.jpg" alt="Baros Maldives in Maldives" />
+        <div class="card-content"><h3>Baros Maldives</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 My Travel Diary | Maldives Page <span style="color: #ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

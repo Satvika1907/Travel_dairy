@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>China Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff8f6;
+      color: #1b2b2b;
+    }
+    header {
+      background: url('./photos/greatwall-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #b22222;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffd166; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #b22222;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #b22222;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #1b2b2b;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #fff5f4;
+      color: #b22222;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+
+    /* small tweaks for mobile */
+    @media (max-width:700px){
+      .sidebar{ display:none; }
+      header{ min-height:45vh }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>China — Land of Ancient Wonders</h1></header>
+  <nav>
+    <a href="index.html">🏯 Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About China</h2>
+    <p>Spanning diverse landscapes from the Great Wall and Forbidden City to dramatic karst rivers and high plateaus, 
+	<strong>China</strong> is a vast country with millennia of history, culture, and natural beauty.</p>
+    <p>Whether you want historic temples, bustling megacities, tranquil countryside, or Himalayan highlands, 
+	China offers unforgettable experiences for travellers.</p>
+	<p>China, officially the People's Republic of China (PRC), is a country in East Asia. 
+	With a population exceeding 1.4 billion, it is the second-most populous country after India, 
+	representing 17.4% of the world population. China is vast; it borders fourteen countries by land
+	across an area of nearly 9.6 million square kilometers (3,700,000 sq mi), 
+	making it the third-largest country by land area.[k] The country is divided into 33 province-level divisions: 
+	22 provinces,[l] 5 autonomous regions, 4 municipalities, and 2 semi-autonomous special administrative regions. 
+	Beijing is the country's capital, while Shanghai is its most populous city by urban area and largest financial center.</p>
+	<p>Considered one of six cradles of civilization, China saw the first human inhabitants in the region arriving during the Paleolithic.
+	By the late 2nd millennium BCE, the earliest dynastic states had emerged in the Yellow River basin. 
+	The 8th–3rd centuries BCE saw a breakdown in the authority of the Zhou dynasty, 
+	accompanied by the emergence of administrative and military techniques, literature, philosophy, and historiography. 
+	In 221 BCE, China was unified under an emperor, ushering in more than two millennia of imperial dynasties including the 
+	Qin, Han, Tang, Yuan, Ming, and Qing. With the invention of gunpowder and paper, 
+	the establishment of the Silk Road, and the building of the Great Wall, Chinese culture flourished and has heavily influenced 
+	both its neighbors and lands further afield. However, China began to cede parts of the country in the late 19th century 
+	to various European powers by a series of unequal treaties. After decades of Qing China on the decline, 
+	the 1911 Revolution overthrew the Qing dynasty and the monarchy and 
+	the Republic of China (ROC) was established the following year.</p>
+	<p>The country under the nascent Beiyang government was unstable and ultimately fragmented during the Warlord Era, 
+	which was ended upon the Northern Expedition conducted by the Kuomintang (KMT) to reunify the country. 
+	The Chinese Civil War began in 1927, when KMT forces purged members of the rival Chinese Communist Party (CCP), 
+	who proceeded to engage in sporadic fighting against the KMT-led Nationalist government. 
+	Following the country's invasion by the Empire of Japan in 1937, the CCP – under the leadership of Mao Zedong – and KMT 
+	formed the Second United Front to fight the Japanese. The Second Sino-Japanese War eventually ended in a Chinese victory; 
+	however, the CCP and the KMT resumed their civil war as soon as the war ended.</p>
+	<p>In 1949, the resurgent Communists established control over most of the country, 
+	proclaiming the People's Republic of China and forcing the Nationalist government to retreat to the island of Taiwan. 
+	The country was split, with both sides claiming to be the sole legitimate government of China. 
+	Following the implementation of land reforms, further attempts by the PRC to realize communism failed: 
+	the Great Leap Forward was largely responsible for the Great Chinese Famine that ended with millions of Chinese people having died,
+	and the subsequent Cultural Revolution was a period of social turmoil and persecution characterized by Maoist populism. 
+	Following the Sino-Soviet split, the Shanghai Communiqué in 1972 would precipitate the normalization 
+	of relations with the United States. Economic reforms that began in 1978 moved the country away from a socialist planned
+	economy towards a market-based economy, spurring significant economic growth. 
+	A movement for increased democracy and liberalization stalled after the Tiananmen Square protests and massacre in 1989.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Best time: Apr–May & Sep–Oct</span>
+        <span class="pill">Languages: Mandarin (普通话)</span>
+        <span class="pill">Highlights: Great Wall, Forbidden City, Terracotta Army</span>
+      </div>
+    </div>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit & Nearby</h2>
+    <ul>
+      <li>🧱 Great Wall of China – Iconic ancient fortification stretching thousands of kilometres.</li>
+      <li>🏯 Forbidden City (Beijing) – Imperial palace complex and UNESCO World Heritage site.</li>
+      <li>🗿 Terracotta Army (Xi'an) – Thousands of life-size sculptures guarding an emperor's tomb.</li>
+      <li>🚣 Li River & Guilin – Scenic karst landscapes and river cruises.</li>
+      <li>🌲 Zhangjiajie – Towering sandstone pillars that inspired floating mountains in film.</li>
+      <li>🏔️ Tibet Plateau & Potala Palace – Spiritual high-altitude culture (Lhasa).</li>
+      <li>🚄 High-speed rail network – Fast, efficient travel across major cities.</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 China Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/greatwall.jpg" alt="Great Wall" /><div class="card-content"><h3>Great Wall</h3></div></div>
+      <div class="card"><img src="./photos/forbidden-city.jpg" alt="Forbidden City" /><div class="card-content"><h3>Forbidden City</h3></div></div>
+      <div class="card"><img src="./photos/terracotta-army.jpg" alt="Terracotta Army" /><div class="card-content"><h3>Terracotta Army</h3></div></div>
+      <div class="card"><img src="./photos/guilin-li-river.jpg" alt="Li River" /><div class="card-content"><h3>Li River, Guilin</h3></div></div>
+      <div class="card"><img src="./photos/zhangjiajie.jpg" alt="Zhangjiajie" /><div class="card-content"><h3>Zhangjiajie</h3></div></div>
+      <div class="card"><img src="./photos/potala-palace.jpg" alt="Potala Palace" /><div class="card-content"><h3>Potala Palace, Lhasa</h3></div></div>
+      <div class="card"><img src="./photos/beijing-night.jpg" alt="Beijing night" /><div class="card-content"><h3>Beijing at Night</h3></div></div>
+      <div class="card"><img src="./photos/highspeed-train.jpg" alt="High-speed train" /><div class="card-content"><h3>High-speed Rail</h3></div></div>
+    </div>
+  </section>
+  <footer>
+  <p>&copy; 2025 China Travel | Explore 中国 <span style="color:#ff6b6b">❤</span></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paris Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fbfbfc;
+      color: #17202a;
+    }
+    header {
+      background: url('./photos/paris-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #0b3d91; /* Paris blue */
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffd166; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #0b3d91;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #0b3d91;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #0b3d91;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #eef6ff;
+      color: #0b3d91;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+
+    /* small tweaks for mobile */
+    @media (max-width:700px){
+      .sidebar{ display:none; }
+      header{ min-height:45vh }
+    }
+  </style>
+</head>
+<body>
+  <header><h1>Bonjour Paris</h1></header>
+  <nav>
+    <a href="index.html">🇫🇷 Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About Paris</h2>
+    <p>The City of Light — <strong>Paris</strong> is a dazzling blend of grand boulevards, world-class museums, charming cafés and riverside strolls along the Seine. Fashion, history and gastronomy meet in every arrondissement.</p>
+    <p>From the iron-laced silhouette of the <strong>Eiffel Tower</strong> to the winding streets of <strong>Montmartre</strong>, Paris invites slow wandering and endless discovery.</p>
+	<p>
+	  Paris is the capital and largest city of France, famous as a global center for culture, fashion, art, and gastronomy, 
+	  with a rich history dating back to prehistoric times. 
+	  Known as the "City of Light," it is home to iconic landmarks such as the Eiffel Tower and the Louvre, 
+	  and is bisected by the Seine River, which also forms part of a UNESCO World Heritage Site.
+	</p>
+	<p>
+	  Paris is the capital and largest city of France, with an estimated population of 2,048,472 in January 2025 
+	  in an area of more than 105 km2 (41 sq mi). 
+	  It is located in the centre of the Île-de-France region. 
+	  Paris is the fourth-most populous city in the European Union. 
+	  Nicknamed the City of Light, Paris has been one of the world's major centres of finance, diplomacy, commerce, culture, fashion, and gastronomy since the 17th century.
+	</p>
+	<p>
+	  Paris is home to several United Nations organisations, including UNESCO, as well as other international organisations such as the OECD,
+	  the OECD Development Centre, the International Bureau of Weights and Measures, the International Energy Agency, 
+	  the International Federation for Human Rights, along with European bodies such as the European Space Agency, 
+	  the European Banking Authority and the European Securities and Markets Authority. 
+	  The city hosts different sporting events, such as the French Open, and is the home of the association football club Paris St-Germain 
+	  and the rugby union club Stade Français; it hosted the Summer Olympics three times.
+	</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Best time: Apr–Jun & Sep–Oct</span>
+        <span class="pill">Language: French</span>
+        <span class="pill">Famous for: Museums, cafés & monuments</span>
+      </div>
+    </div>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit Places</h2>
+    <ul>
+      <li>🗼 Eiffel Tower – Iconic landmark with panoramic views.</li>
+      <li>🖼️ Louvre Museum – Home of the Mona Lisa and vast collections.</li>
+      <li>⛪ Notre-Dame de Paris – Gothic masterpiece (exterior & surroundings).</li>
+      <li>🎨 Montmartre & Sacré-Cœur – Artists' quarter and hilltop basilica.</li>
+      <li>🚤 Seine River Cruise – Sunset cruises under historic bridges.</li>
+      <li>🛍️ Champs-Élysées & Arc de Triomphe – Shopping and grand avenues.</li>
+      <li>🕰️ Musée d'Orsay – Impressionist masterpieces in a former station.</li>
+      <li>🌈 Sainte-Chapelle – Stained glass jewel-box chapel.</li>
+      <li>🌿 Luxembourg Gardens – Relaxing formal gardens and terraces.</li>
+      <li>📚 Latin Quarter – Historic streets, bookshops and cafés.</li>
+      <li>🏰 Palace of Versailles – Opulent palace and gardens (nearby).</li>
+      <li>🏙️ Le Marais – Trendy district with boutiques and bistros.</li>
+      <li>💃 Moulin Rouge – Classic cabaret in Pigalle.</li>
+      <li>⚰️ Père Lachaise Cemetery – Resting place of many famous figures.</li>
+      <li>🛶 Canal Saint-Martin – Charming locks, bridges and waterside cafés.</li>
+      <li>🎭 Palais Garnier – Opulent opera house with gilded interiors.</li>
+      <li>🌼 Tuileries & Place de la Concorde – Central garden and historic square.</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 Paris Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/eiffel.jpg" alt="Eiffel Tower" /><div class="card-content"><h3>Eiffel Tower</h3></div></div>
+      <div class="card"><img src="./photos/louvre.jpg" alt="Louvre Museum" /><div class="card-content"><h3>Louvre Museum</h3></div></div>
+      <div class="card"><img src="./photos/notredame.jpg" alt="Notre-Dame" /><div class="card-content"><h3>Notre-Dame (exterior)</h3></div></div>
+      <div class="card"><img src="./photos/montmartre.jpg" alt="Montmartre" /><div class="card-content"><h3>Montmartre & Sacré-Cœur</h3></div></div>
+      <div class="card"><img src="./photos/seine-cruise.jpg" alt="Seine River" /><div class="card-content"><h3>Seine River</h3></div></div>
+      <div class="card"><img src="./photos/champs-elysees.jpg" alt="Champs-Élysées" /><div class="card-content"><h3>Champs-Élysées</h3></div></div>
+      <div class="card"><img src="./photos/musee-dorsay.jpg" alt="Musée d'Orsay" /><div class="card-content"><h3>Musée d'Orsay</h3></div></div>
+      <div class="card"><img src="./photos/sainte-chapelle.jpg" alt="Sainte-Chapelle" /><div class="card-content"><h3>Sainte-Chapelle</h3></div></div>
+      <div class="card"><img src="./photos/luxembourg.jpg" alt="Luxembourg Gardens" /><div class="card-content"><h3>Luxembourg Gardens</h3></div></div>
+      <div class="card"><img src="./photos/versailles.jpg" alt="Palace of Versailles" /><div class="card-content"><h3>Palace of Versailles</h3></div></div>
+      <div class="card"><img src="./photos/le-marais.jpg" alt="Le Marais" /><div class="card-content"><h3>Le Marais</h3></div></div>
+      <div class="card"><img src="./photos/moulin-rouge.jpg" alt="Moulin Rouge" /><div class="card-content"><h3>Moulin Rouge</h3></div></div>
+      <div class="card"><img src="./photos/pere-lachaise.jpg" alt="Père Lachaise" /><div class="card-content"><h3>Père Lachaise Cemetery</h3></div></div>
+      <div class="card"><img src="./photos/canal-saint-martin.jpg" alt="Canal Saint-Martin" /><div class="card-content"><h3>Canal Saint-Martin</h3></div></div>
+      <div class="card"><img src="./photos/palais-garnier.jpg" alt="Palais Garnier" /><div class="card-content"><h3>Palais Garnier</h3></div></div>
+      <div class="card"><img src="./photos/tuileries.jpg" alt="Tuileries" /><div class="card-content"><h3>Tuileries Garden</h3></div></div>
+    </div>
+  </section>
+  <footer>
+  <p>&copy; 2025 My Travel Diary | Paris Page <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

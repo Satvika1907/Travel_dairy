@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hyderabad Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: url('./photos/hyderabad-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: #0b1f28;
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #f4d03f; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #0b1f28;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #0b1f28;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: #0b1f28;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #e6f7fb;
+      color: #0b1f28;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+  </style>
+</head>
+<body>
+  <header><h1>Welcome to Hyderabad</h1></header>
+  <nav>
+    <a href="index.html">🏙️ Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About Hyderabad</h2>
+    <p>Known as the <strong>City of Pearls</strong>, Hyderabad is a historic city blending <em>Nizami heritage</em>, vibrant <em>IT hubs</em>, and rich culture.</p>
+    <p>From the iconic <strong>Charminar</strong> to the sprawling <strong>HITEC City</strong>, Hyderabad reflects a fusion of old-world charm and modern innovation.</p>
+	<p>Hyderabad is the capital and largest city of the Indian state of Telangana. 
+	It occupies 650 km2 (250 sq mi) on the Deccan Plateau along the banks of the Musi River, in the northern part of Southern India. 
+	With an average altitude of 536 m (1,759 ft), much of Hyderabad is situated on hilly terrain around artificial lakes,
+	including the Hussain Sagar lake, predating the city's founding, in the north of the city centre. 
+	According to the 2011 census of India, Hyderabad is the fourth-most populous city in India with a population of 6.9 million residents 
+	within the city limits, and has a population of 9.7 million residents in the metropolitan region, 
+	making it the sixth-most populous metropolitan area in India. 
+	With an output of US$ 95 billion,Hyderabad has the sixth-largest urban economy in India.</p>
+	<p>The Qutb Shahi dynasty's Muhammad Quli Qutb Shah established Hyderabad in 1591 to extend the capital beyond the fortified Golconda.
+	In 1687, the city was annexed by the Mughals. 
+	In 1724, Asaf Jah I, the Mughal viceroy, declared his sovereignty and founded the Asaf Jahi dynasty, also known as the Nizams. 
+	Hyderabad served as the imperial capital of the Asaf Jahis from 1769 to 1948. 
+	As the capital of the princely state of Hyderabad, the city housed the British Residency and cantonment until Indian independence in 1947. 
+	Hyderabad was annexed by the Indian Union in 1948 and continued as a capital of Hyderabad State from 1948 to 1956. 
+	After the introduction of the States Reorganisation Act of 1956, Hyderabad was made the capital of the newly formed Andhra Pradesh. 
+	In 2014, Andhra Pradesh was split to form the state of Telangana, and Hyderabad became the joint capital of the two states until 2024.
+	Since 1956, the city has housed the Rashtrapati Nilayam, the winter office of the president of India.</p>
+	<p>Relics of the Qutb Shahi and Nizam eras remain visible today; the Charminar has come to symbolise the city. 
+	By the end of the early modern era, the Mughal Empire had declined in the Deccan, 
+	and the Nizam's patronage attracted men of letters from various parts of the world.
+	A distinctive culture arose from the amalgamation of local and migrated artisans, with painting, handicraft, jewellery, literature, dialect and clothing prominent even today. 
+	For its cuisine, the city is listed as a creative city of gastronomy by UNESCO. 
+	The Telugu film industry based in the city is the highest-grossing film industry in India as of 2021.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Best time: Oct–Feb</span>
+        <span class="pill">Language: Telugu, Urdu, English</span>
+        <span class="pill">Famous for: Biryani & Pearls</span>
+      </div>
+    </div>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit Places</h2>
+    <ul>
+      <li>🏰 Charminar – The iconic monument of Hyderabad</li>
+      <li>🏯 Golconda Fort – Historic fortress with stunning acoustics</li>
+      <li>🌊 Hussain Sagar Lake – Heart-shaped lake with Buddha statue</li>
+      <li>🌉 Tank Bund – Scenic boulevard along Hussain Sagar Lake</li>
+      <li>🏙️ Old City – Bustling bazaars, Irani cafés, and heritage streets</li>
+      <li>🦁 Nehru Zoological Park – One of India’s largest zoos</li>
+      <li>🎥 Ramoji Film City – World’s largest film studio complex</li>
+      <li>🏛️ Chowmahalla Palace – Seat of the Nizams</li>
+      <li>🖼️ Salar Jung Museum – Vast collection of art & antiques</li>
+	  <li>🏢 Secretariat – Newly built Telangana Secretariat, symbolizing modern governance with cultural design.</li>
+	  <li>🛕 Peddamma Talli Temple – Sacred temple dedicated to the “Mother of Mothers”, especially vibrant during Bonalu.</li>
+      <li>🎢 Wonderla – Hyderabad’s biggest amusement and water park offering thrill rides and family fun.</li>
+      <li>🌉 Durgam Cheruvu – A tranquil lake with a scenic cable bridge and walking trails, perfect for sunsets.</li>
+      <li>🏙️ Hitech City – Hyderabad’s bustling IT and business hub with skyscrapers and innovation centers.</li>
+      </li>🏢 Gachibowli – Fast-growing financial district, home to tech parks, stadiums, and top institutes.</li>
+      <li>🏠 Kondapur – A cosmopolitan residential suburb known for its food joints, cafes, and proximity to tech corridors.</li>
+	  <li>🛍️ IKEA Hyderabad – India’s first IKEA store offering Scandinavian home goods in a massive, family-friendly space.</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 Hyderabad Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/charminar.jpg" alt="Charminar" /><div class="card-content"><h3>Charminar</h3></div></div>
+      <div class="card"><img src="./photos/golconda-fort.jpg" alt="Golconda Fort" /><div class="card-content"><h3>Golconda Fort</h3></div></div>
+      <div class="card"><img src="./photos/hussain-sagar.jpg" alt="Hussain Sagar" /><div class="card-content"><h3>Hussain Sagar</h3></div></div>
+      <div class="card"><img src="./photos/tank-bund.jpg" alt="Tank Bund" /><div class="card-content"><h3>Tank Bund</h3></div></div>
+      <div class="card"><img src="./photos/old-city.jpg" alt="Old City Hyderabad" /><div class="card-content"><h3>Old City</h3></div></div>
+      <div class="card"><img src="./photos/nehru-zoo.jpg" alt="Nehru Zoological Park" /><div class="card-content"><h3>Nehru Zoological Park</h3></div></div>
+      <div class="card"><img src="./photos/ramoji-film-city.jpg" alt="Ramoji Film City" /><div class="card-content"><h3>Ramoji Film City</h3></div></div>
+      <div class="card"><img src="./photos/chowmahalla-palace.jpg" alt="Chowmahalla Palace" /><div class="card-content"><h3>Chowmahalla Palace</h3></div></div>
+      <div class="card"><img src="./photos/salar-jung-museum.jpg" alt="Salar Jung Museum" /><div class="card-content"><h3>Salar Jung Museum</h3></div></div>
+	  <div class="card"><img src="./photos/secretariat.jpg" alt="Secretariat" /><div class="card-content"><h3>Secretariat</h3></div></div>
+	  <div class="card"><img src="./photos/peddamma-talli.jpg" alt="Peddamma Talli" /><div class="card-content"><h3>Peddamma Talli</h3></div></div>	
+      <div class="card"><img src="./photos/wonderla.jpg" alt="Wonderla" /><div class="card-content"><h3>Wonderla</h3></div></div>
+      <div class="card"><img src="./photos/durgam-cheruvu.jpg" alt="Durgam Cheruvu" /><div class="card-content"><h3>Durgam Cheruvu</h3></div></div>
+      <div class="card"><img src="./photos/hitech-city.jpg" alt="Hitech City" /><div class="card-content"><h3>Hitech City</h3></div></div>
+      <div class="card"><img src="./photos/gachibowli.jpg" alt="Gachibowli" /><div class="card-content"><h3>Gachibowli</h3></div></div>
+      <div class="card"><img src="./photos/kondapur.jpg" alt="Kondapur" /><div class="card-content"><h3>Kondapur</h3></div></div>
+      <div class="card"><img src="./photos/ikea.jpg" alt="Ikea" /><div class="card-content"><h3>Ikea</h3></div></div>  	  
+    </div>
+	
+	Durgam-Cheruvu
+  </section>
+  <footer>
+  <p>&copy; 2025 My Travel Diary | Hyderabad Page <span style="color:#ff6b6b">&#10084;</span></p>
+  </footer>
+</body>
+</html>

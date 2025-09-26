@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>México Travel</title>
+  <style>
+    * {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      caret-color: transparent;
+      box-sizing: border-box;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffaf7;
+      color: #1b2b2b;
+    }
+    header {
+      background: url('./photos/mexico-banner.jpg') no-repeat center/cover;
+      min-height: 55vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      isolation: isolate;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.28));
+      z-index: -1;
+    }
+    header h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      background: rgba(0, 0, 0, 0.45);
+      padding: 16px 28px;
+      border-radius: 14px;
+      backdrop-filter: blur(2px);
+    }
+    nav {
+      background: linear-gradient(90deg,#8b3e2f,#2b6f6f);
+      padding: 14px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: white;
+      margin: 0 16px;
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    nav a:hover { color: #ffd166; }
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 48px 20px;
+    }
+    section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-content { padding: 14px 16px; }
+    .sidebar {
+      position: fixed;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      z-index: 9;
+    }
+    .sidebar a {
+      position: relative;
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: #2b6f6f;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    .sidebar a::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #2b6f6f;
+      font-size: 14px;
+      opacity: 0;
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .sidebar a:hover::after {
+      opacity: 1;
+      transform: translateY(-50%) translateX(6px);
+    }
+    footer {
+      background: linear-gradient(90deg,#2b6f6f,#8b3e2f);
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 40px;
+    }
+    .pill {
+      display: inline-block;
+      background: #fff7f1;
+      color: #8b3e2f;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .sidebar a:hover { width:35px; height:8px; }
+
+    /* small tweaks for mobile */
+    @media (max-width:700px){
+      .sidebar{ display:none; }
+      header{ min-height:45vh }
+    }
+
+    /* small decorative accent */
+    .accent-line{ height:4px; border-radius:4px; background: linear-gradient(90deg,#f4a261,#e76f51); margin:18px 0; }
+  </style>
+</head>
+<body>
+  <header><h1>México — Land of Colors & Culture</h1></header>
+  <nav>
+    <a href="index.html">🌵 Home</a>
+    <a href="#about">About</a>
+    <a href="#places">Must-Visit</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <div class="sidebar">
+    <a href="#home" data-label="Home"></a>
+    <a href="#about" data-label="About"></a>
+    <a href="#places" data-label="Places"></a>
+    <a href="#gallery" data-label="Gallery"></a>
+  </div>
+  <section id="about">
+    <h2>About México</h2>
+    <p>Spanning deserts, jungles, high plateaus and sandy beaches, <strong>México</strong> is a country of deep traditions,
+	vivid colors, and remarkable archaeological heritage. From pre-Hispanic civilizations to colonial cities 
+	and vibrant contemporary culture, México invites discovery.</p>
+    <p>Regions like the Yucatán Peninsula, Oaxaca, Chiapas and the central highlands each have distinct food, art and history. 
+	Street markets, festivals (like Día de Muertos), and centuries-old crafts bring local life to every corner.</p>
+	<p>Mexico,officially the United Mexican States,is a country in North America. 
+	It is considered to be part of Central America by the United Nations geoscheme.
+	It is the northernmost country in Latin America, and borders the United States to the north, 
+	and Guatemala and Belize to the southeast; while having maritime boundaries with the Pacific Ocean to the west, 
+	the Caribbean Sea to the southeast, and the Gulf of Mexico to the east. 
+	Mexico covers 1,972,550 km2 (761,610 sq mi),and is the thirteenth-largest country in the world by land area.
+	With a population exceeding 130 million, Mexico is the tenth-most populous country in the world and is home to the largest number
+	of native Spanish speakers. Mexico City is the capital and largest city, which ranks among the most populous metropolitan areas
+	in the world.</p>
+	<p>Human presence in Mexico dates back to at least 8,000 BC. 
+	Mesoamerica, considered a cradle of civilization, was home to numerous advanced societies, including the Olmecs, 
+	Maya, Zapotecs, Teotihuacan civilization, and Purépecha. Spanish colonization began in 1521 with an alliance that defeated the Aztec
+	Empire, establishing the colony of New Spain with its capital at Tenochtitlan, now Mexico City. 
+	New Spain became a major center of the transoceanic economy during the Age of Discovery, fueled by silver mining 
+	and its position as a hub between Europe and Asia. This gave rise to one of the largest multiracial populations in the world. 
+	The Peninsular War led to the 1810–1821 Mexican War of Independence, which ended Peninsular rule and led to the 
+	creation of the First Mexican Empire, which quickly collapsed into the short-lived First Mexican Republic.</p>
+	<p>In 1848, Mexico lost nearly half its territory to the American invasion. 
+	Liberal reforms set in the Constitution of 1857 led to civil war and French intervention, 
+	culminating in the establishment of the Second Mexican Empire under Emperor Maximilian I of Austria, 
+	who was overthrown by Republican forces led by Benito Juárez. The late 19th century saw the long dictatorship of Porfirio Díaz, 
+	whose modernization policies came at the cost of severe social unrest. 
+	The 1910–1920 Mexican Revolution led to the overthrow of Díaz and the adoption of the 1917 Constitution. 
+	Mexico experienced rapid industrialization and economic growth in the 1940s–1970s, amidst electoral fraud, political repression, 
+	and economic crises. Unrest included the Tlatelolco massacre of 1968 and the Zapatista uprising in 1994. 
+	The late 20th century saw a shift towards neoliberalism, marked by the signing of the North American Free Trade Agreement (NAFTA) 
+	in 1994.</p>
+    <div class="card" style="margin-top:18px;">
+      <div class="card-content">
+        <span class="pill">Currency: Mexican Peso (MXN)</span>
+        <span class="pill">Language: Spanish (widely spoken)</span>
+        <span class="pill">Best time: Nov–Apr (dry season)</span>
+      </div>
+    </div>
+    <div class="accent-line"></div>
+    <p><strong>Quick tips:</strong> Stay hydrated in high-altitude Mexico City, try local markets for authentic food, book archaeological-site tickets in advance for Chichén Itzá and Teotihuacan, and respect protected areas and indigenous communities when visiting.</p>
+  </section>
+  <section id="places">
+    <h2>📍 Must-Visit & Highlights</h2>
+    <ul>
+      <li>🏛️ Chichén Itzá — Iconic Mayan pyramid and UNESCO site (Yucatán).</li>
+      <li>🏙️ Mexico City (Zócalo, Frida Kahlo Museum, Xochimilco) — A huge cultural capital.</li>
+      <li>🏖️ Tulum & Cancún — Caribbean beaches, cenotes and reefs.</li>
+      <li>⛰️ Copper Canyon (Barranca del Cobre) — Dramatic canyons and scenic train rides.</li>
+      <li>🛕 Teotihuacan — Avenue of the Dead and the Sun/Moon pyramids.</li>
+      <li>🎭 Oaxaca — Traditional crafts, mole sauces and vibrant festivals.</li>
+      <li>🌿 Palenque & Sumidero Canyon — Ancient ruins and lush Chiapas landscapes.</li>
+      <li>🏝️ Isla Holbox — Quiet island for whale sharks and sunsets.</li>
+    </ul>
+  </section>
+  <section id="gallery">
+    <h2>📸 México Gallery</h2>
+    <div class="gallery">
+      <div class="card"><img src="./photos/chichen-itza.jpg" alt="Chichén Itzá" /><div class="card-content"><h3>Chichén Itzá</h3></div></div>
+      <div class="card"><img src="./photos/mexico-city-zocalo.jpg" alt="Mexico City Zócalo" /><div class="card-content"><h3>Mexico City — Zócalo</h3></div></div>
+      <div class="card"><img src="./photos/tulum-beach.jpg" alt="Tulum Beach" /><div class="card-content"><h3>Tulum Beach & Ruins</h3></div></div>
+      <div class="card"><img src="./photos/oaxaca-market.jpg" alt="Oaxaca Market" /><div class="card-content"><h3>Oaxaca — Markets & Crafts</h3></div></div>
+      <div class="card"><img src="./photos/copper-canyon.jpg" alt="Copper Canyon" /><div class="card-content"><h3>Copper Canyon</h3></div></div>
+      <div class="card"><img src="./photos/palenque-ruins.jpg" alt="Palenque" /><div class="card-content"><h3>Palenque — Jungle Ruins</h3></div></div>
+      <div class="card"><img src="./photos/cenote.jpg" alt="Cenote" /><div class="card-content"><h3>Cenotes (freshwater sinkholes)</h3></div></div>
+      <div class="card"><img src="./photos/holbox.jpg" alt="Isla Holbox" /><div class="card-content"><h3>Isla Holbox</h3></div></div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 México Travel | Explore & Respect <span style="color:#ff6b6b">❤</span></p>
+  </footer>
+</body>
+</html>
